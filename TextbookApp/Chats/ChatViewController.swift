@@ -56,7 +56,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     init(chat: Chat) {
         self.chat = chat
         super.init(nibName: nil, bundle: nil)
-        title = chat.you.valueForKey("username") as? String
+        title = chat.you?.valueForKey("username") as? String
     }
 
     required init(coder aDecoder: NSCoder) {

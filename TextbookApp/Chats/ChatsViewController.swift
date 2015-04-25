@@ -14,9 +14,9 @@ class ChatsViewController: UITableViewController {
         super.viewDidLoad()
         
         let chat = Chat(me: PFUser.currentUser()!, you: PFUser.currentUser()!, lastMessageText: "hello", lastMessageSentDate: NSDate())
-        let tempChats = [chat] as AnyObject
+        let tempChats = [chat]
         let currentUser = PFUser.currentUser()!
-        currentUser.setObject(tempChats, forKey: "chats")
+        currentUser.setValue(tempChats, forKey: "chats")
         currentUser.saveInBackgroundWithBlock(nil)
         println(currentUser.objectForKey("chats"))
 //        PFUser.currentUser()?.setObject("hello", forKey: "message")
