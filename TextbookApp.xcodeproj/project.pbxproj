@@ -13,6 +13,8 @@
 		2E2A03051AEBE04A00113A67 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FF1AEBE04A00113A67 /* ParseFacebookUtils.framework */; };
 		2E2A03061AEBE04A00113A67 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A03001AEBE04A00113A67 /* ParseFacebookUtilsV4.framework */; };
 		2E2A03071AEBE04A00113A67 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A03011AEBE04A00113A67 /* ParseUI.framework */; };
+		2E2A030B1AEC0A6900113A67 /* textbooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */; };
+		2E2A030D1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */; };
 		2EE86FC41AEBC8D3004CF838 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
 		2EE86FC61AEBC8DA004CF838 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
 		2EE86FC81AEBC8DF004CF838 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
@@ -67,6 +69,8 @@
 		2E2A02FF1AEBE04A00113A67 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../Downloads/parse-library-1-5/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		2E2A03001AEBE04A00113A67 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../Downloads/parse-library-1-5/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		2E2A03011AEBE04A00113A67 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Downloads/parse-library-1-5/ParseUI.framework"; sourceTree = "<group>"; };
+		2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textbooksTableViewController.swift; sourceTree = "<group>"; };
+		2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBookCourseListTableViewController.swift; sourceTree = "<group>"; };
 		2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -199,6 +203,8 @@
 				B96098541AEBC558007D6DC1 /* LaunchScreen.xib */,
 				B96098491AEBC558007D6DC1 /* Supporting Files */,
 				2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */,
+				2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */,
+				2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */,
 			);
 			path = TextbookApp;
 			sourceTree = "<group>";
