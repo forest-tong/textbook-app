@@ -3,12 +3,12 @@ import Parse
 
 var dateFormatter = NSDateFormatter()
 
-class Chat: PFObject, PFSubclassing {
-    @NSManaged var me: PFUser
-    @NSManaged var you: PFUser
-    @NSManaged var lastMessageText: String
-    @NSManaged var lastMessageSentDate: NSDate
-    @NSManaged var messages: [[Message]]
+class Chat {
+    var me: PFUser
+    var you: PFUser
+    var lastMessageText: String
+    var lastMessageSentDate: NSDate
+    var messages: [[Message]]
     var unreadMessageCount: Int = 0 // subtacted from total when read
     var hasUnloadedMessages = false
     var draft = ""
@@ -17,17 +17,12 @@ class Chat: PFObject, PFSubclassing {
         return formatDate(lastMessageSentDate)
     }
     
-//    init(user: PFUser, lastMessageText: String, lastMessageSentDate: NSDate) {
-//        self.user = user
-//        self.lastMessageText = lastMessageText
-//        self.lastMessageSentDate = lastMessageSentDate
-//    }
-    
-    override class func initialize() {
-        var onceToken: dispatch_once_t = 0
-        dispatch_once(&onceToken, {
-            self.registerSubclass()
-        })
+    init(me: PFUser, you: PFUser, lastMessageText: String, lastMessageSentDate: NSDate) {
+        self.me = me
+        self.you = you
+        self.lastMessageText = lastMessageText
+        self.lastMessageSentDate = lastMessageSentDate
+        self.messages = []
     }
     
     func formatDate(date: NSDate) -> String {
