@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddBookCourseListTableViewController: PFQueryTableViewController {
+class addBookCourseListTableViewController: PFQueryTableViewController {
     override init(style: UITableViewStyle, className: String!) {
         super.init(style: style, className: className)
     }
