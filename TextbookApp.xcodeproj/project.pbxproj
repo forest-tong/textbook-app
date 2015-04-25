@@ -36,6 +36,7 @@
 		2E7293241AEC562E00546E21 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994F1AEC3BE000975082 /* ParseFacebookUtils.framework */; };
 		2E7293251AEC562E00546E21 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699501AEC3BE000975082 /* ParseFacebookUtilsV4.framework */; };
 		2E7293261AEC562E00546E21 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699531AEC3BE000975082 /* ParseUI.framework */; };
+		2E72932A1AEC5AF600546E21 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7293291AEC5AF600546E21 /* DetailsTableViewController.swift */; };
 		2EE86FC41AEBC8D3004CF838 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
 		2EE86FC61AEBC8DA004CF838 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
 		2EE86FC81AEBC8DF004CF838 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
@@ -131,6 +132,7 @@
 		2E7293061AEC542200546E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E7293081AEC542200546E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		2E72930A1AEC542200546E21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E7293291AEC5AF600546E21 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -330,6 +332,7 @@
 				D1A8EB061AEC347900732D29 /* Textbook.swift */,
 				D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */,
 				B960984F1AEBC558007D6DC1 /* Main.storyboard */,
+				2E7293291AEC5AF600546E21 /* DetailsTableViewController.swift */,
 				B96098521AEBC558007D6DC1 /* Images.xcassets */,
 				B96098541AEBC558007D6DC1 /* LaunchScreen.xib */,
 				2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */,
@@ -589,6 +592,7 @@
 				B96098B31AEBE38D007D6DC1 /* ChatCell.swift in Sources */,
 				B96098B41AEBE38D007D6DC1 /* ChatsViewController.swift in Sources */,
 				B96098B01AEBE38D007D6DC1 /* Account.swift in Sources */,
+				2E72932A1AEC5AF600546E21 /* DetailsTableViewController.swift in Sources */,
 				B96098BB1AEBE38D007D6DC1 /* MessageBubbleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
