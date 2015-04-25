@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DetailsTableViewController: UITableViewController {
-
+class DetailsTableViewController: UITableViewController, UITextFieldDelegate {
+    var textbook: PFObject!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var editionTF: UITextField!
     @IBOutlet weak var priceTF: UITextField!
@@ -29,7 +29,18 @@ class DetailsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        nameTF.delegate = self
+        editionTF.delegate = self
+        priceTF.delegate = self
+        conditionTF.delegate = self
+        notesTF.delegate = self
         
+       
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return false
     }
 
     override func didReceiveMemoryWarning() {

@@ -76,7 +76,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="yOe-Gs-gs5" kind="show" id="Gjj-Gc-uc6"/>
+                                    <segue destination="yOe-Gs-gs5" kind="show" identifier="detailsSegue" id="Gjj-Gc-uc6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
