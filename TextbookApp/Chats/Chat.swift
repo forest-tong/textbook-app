@@ -3,7 +3,7 @@ import Parse
 
 var dateFormatter = NSDateFormatter()
 
-class Chat {
+class Chat: PFObject, PFSubclassing {
     var me: PFUser
     var you: PFUser
     var lastMessageText: String
@@ -12,6 +12,22 @@ class Chat {
     var unreadMessageCount: Int = 0 // subtacted from total when read
     var hasUnloadedMessages = false
     var draft = ""
+    
+    override class func initialize() {
+        var onceToken : dispatch_once_t = 0;
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
+    
+    override init() {
+        self.me = PFUser.currentUser()!
+        self.you = PFUser.currentUser()!
+        self.lastMessageText = "hello"
+        self.lastMessageSentDate = NSDate()
+        self.messages = []
+        super.init()
+    }
     
     var lastMessageSentDateString: String {
         return formatDate(lastMessageSentDate)
@@ -23,6 +39,7 @@ class Chat {
         self.lastMessageText = lastMessageText
         self.lastMessageSentDate = lastMessageSentDate
         self.messages = []
+        super.init()
     }
     
     func formatDate(date: NSDate) -> String {
