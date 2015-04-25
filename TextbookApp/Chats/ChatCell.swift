@@ -72,7 +72,7 @@ class ChatCell: UITableViewCell {
     func configureWithChat(chat: Chat) {
         let user = chat.you
         userPictureImageView.image = UIImage(named: "User0")
-        userNameLabel.text = user.valueForKey("username") as? String
+        userNameLabel.text = user?.valueForKey("username") as? String
         lastMessageTextLabel.text = chat.lastMessageText
         lastMessageSentDateLabel.text = chat.lastMessageSentDateString
     }

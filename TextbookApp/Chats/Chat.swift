@@ -4,10 +4,10 @@ import Parse
 var dateFormatter = NSDateFormatter()
 
 class Chat: PFObject, PFSubclassing {
-    var me: PFUser
-    var you: PFUser
-    var lastMessageText: String
-    var lastMessageSentDate: NSDate
+    var me: PFUser?
+    var you: PFUser?
+    var lastMessageText: String?
+    var lastMessageSentDate: NSDate?
     var messages: [[Message]]
     var unreadMessageCount: Int = 0 // subtacted from total when read
     var hasUnloadedMessages = false
@@ -21,15 +21,15 @@ class Chat: PFObject, PFSubclassing {
     }
     
     override init() {
-        self.me = PFUser.currentUser()!
-        self.you = PFUser.currentUser()!
-        self.lastMessageText = "hello"
-        self.lastMessageSentDate = NSDate()
+        self.me = nil
+        self.you = nil
+        self.lastMessageText = nil
+        self.lastMessageSentDate = nil
         self.messages = []
         super.init()
     }
     
-    var lastMessageSentDateString: String {
+    var lastMessageSentDateString: String? {
         return formatDate(lastMessageSentDate)
     }
     
@@ -42,23 +42,26 @@ class Chat: PFObject, PFSubclassing {
         super.init()
     }
     
-    func formatDate(date: NSDate) -> String {
+    func formatDate(date: NSDate?) -> String? {
         let calendar = NSCalendar.currentCalendar()
         
-        let last18hours = (-18*60*60 < date.timeIntervalSinceNow)
-        let isToday = calendar.isDateInToday(date)
-        let isLast7Days = (calendar.compareDate(NSDate(timeIntervalSinceNow: -7*24*60*60), toDate: date, toUnitGranularity: .CalendarUnitDay) == NSComparisonResult.OrderedAscending)
-        
-        if last18hours || isToday {
-            dateFormatter.dateStyle = .NoStyle
-            dateFormatter.timeStyle = .ShortStyle
-        } else if isLast7Days {
-            dateFormatter.dateFormat = "ccc"
-        } else {
-            dateFormatter.dateStyle = .ShortStyle
-            dateFormatter.timeStyle = .NoStyle
+        if let date = date {
+            let last18hours = (-18*60*60 < date.timeIntervalSinceNow)
+            let isToday = calendar.isDateInToday(date)
+            let isLast7Days = (calendar.compareDate(NSDate(timeIntervalSinceNow: -7*24*60*60), toDate: date, toUnitGranularity: .CalendarUnitDay) == NSComparisonResult.OrderedAscending)
+            
+            if last18hours || isToday {
+                dateFormatter.dateStyle = .NoStyle
+                dateFormatter.timeStyle = .ShortStyle
+            } else if isLast7Days {
+                dateFormatter.dateFormat = "ccc"
+            } else {
+                dateFormatter.dateStyle = .ShortStyle
+                dateFormatter.timeStyle = .NoStyle
+            }
+            return dateFormatter.stringFromDate(date)
         }
-        return dateFormatter.stringFromDate(date)
+        return nil
     }
 
     static func parseClassName() -> String {
