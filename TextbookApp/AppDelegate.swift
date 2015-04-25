@@ -8,8 +8,6 @@
 
 import UIKit
 
-var account = Account(user: User(ID: 1, username: "mattdipasquale", firstName: "Matt", lastName: "Di Pasquale"))
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

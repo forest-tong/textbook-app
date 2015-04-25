@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1173" y="1025"/>
         </scene>
-        <!--Chats View Controller-->
+        <!--Chats-->
         <scene sceneID="y2Z-0M-u6j">
             <objects>
                 <tableViewController id="7co-oZ-Hm5" customClass="ChatsViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,7 +152,7 @@
                             <outlet property="delegate" destination="7co-oZ-Hm5" id="Fu0-te-a88"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1gH-Sv-6O7"/>
+                    <navigationItem key="navigationItem" title="Chats" id="1gH-Sv-6O7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycJ-AW-tRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="713" y="326"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Start Tab Bar Controller-->
         <scene sceneID="hgM-sN-mVM">
             <objects>
-                <tabBarController id="tDj-Xq-Y6C" sceneMemberID="viewController">
+                <tabBarController id="tDj-Xq-Y6C" customClass="StartTabBarController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="oxt-1j-l9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
