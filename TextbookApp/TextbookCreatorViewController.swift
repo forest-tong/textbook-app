@@ -13,6 +13,13 @@ class TextbookCreatorViewController: UITableViewController {
     
     var course : PFObject!
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var editionTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var conditionTextField: UITextField!
+    @IBOutlet weak var notesTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +35,17 @@ class TextbookCreatorViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onSaveButtonTap(sender: AnyObject) {
+        let book = Textbook(className: "Textbook")
+        book.name = nameTextField.text
+        book.edition = (editionTextField.text as NSString).integerValue
+        book.price = (priceTextField.text as NSString).doubleValue
+        book.condition = conditionTextField.text
+        book.notes = notesTextView.text
+        book.saveInBackgroundWithBlock(nil)
+        
+        performSegueWithIdentifier("unwindToMyBooks", sender: self)
+    }
     /*
     // MARK: - Navigation
 
