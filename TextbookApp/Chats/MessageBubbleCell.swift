@@ -47,7 +47,7 @@ class MessageBubbleCell: UITableViewCell {
             var layoutAttribute: NSLayoutAttribute
             var layoutConstant: CGFloat
 
-            if message.incoming {
+            if message.incoming! {
                 tag = incomingTag
                 bubbleImageView.image = bubbleImage.incoming
                 bubbleImageView.highlightedImage = bubbleImage.incomingHighlighed

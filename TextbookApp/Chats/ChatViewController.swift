@@ -69,18 +69,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(chat.messages)
-        chat.messages = [
-            [
-                Message(incoming: true, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
-                Message(incoming: false, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2))
-            ],
-            [
-                Message(incoming: true, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
-                Message(incoming: false, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
-                Message(incoming: true, text: "6 sounds good :-)", sentDate: NSDate())
-            ]
-        ]
 
         let whiteColor = UIColor.whiteColor()
         view.backgroundColor = whiteColor // smooths push animation
@@ -163,7 +151,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let message = chat.messages[indexPath.section][0]
             dateFormatter.dateStyle = .ShortStyle
             dateFormatter.timeStyle = .ShortStyle
-            cell.sentDateLabel.text = dateFormatter.stringFromDate(message.sentDate)
+            cell.sentDateLabel.text = dateFormatter.stringFromDate(message.sentDate!)
             return cell
         } else {
             let cellIdentifier = NSStringFromClass(MessageBubbleCell)
@@ -259,6 +247,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         textView.becomeFirstResponder()
 
         chat.messages.append([Message(incoming: false, text: textView.text, sentDate: NSDate())])
+        chat.saveInBackgroundWithBlock(nil)
         textView.text = nil
         updateTextViewHeight()
         sendButton.enabled = false
