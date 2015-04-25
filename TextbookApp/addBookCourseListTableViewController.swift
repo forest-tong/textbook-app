@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addBookCourseListTableViewController: PFQueryTableViewController {
+class AddBookCourseListTableViewController: PFQueryTableViewController {
     override init(style: UITableViewStyle, className: String!) {
         super.init(style: style, className: className)
     }
@@ -37,9 +37,9 @@ class addBookCourseListTableViewController: PFQueryTableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "courseSegue" {
-            let addBookVC = segue.destinationViewController as! ADDBOOKVIEWCONTROLLER
-            addBookVC.courseObject = objectAtIndexPath(tableView.indexPathForSelectedRow()!)
+        if segue.identifier == "addBookSegue" {
+            let addBookVC = segue.destinationViewController as! TextbookCreatorViewController
+            addBookVC.course = objectAtIndexPath(tableView.indexPathForSelectedRow()!)
         }
     }
    

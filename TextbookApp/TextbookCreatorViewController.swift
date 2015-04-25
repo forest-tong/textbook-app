@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class TextbookCreatorViewController: UITableViewController {
+    
+    var course : PFObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
