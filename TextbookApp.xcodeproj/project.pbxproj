@@ -32,6 +32,9 @@
 		B96098531AEBC558007D6DC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96098521AEBC558007D6DC1 /* Images.xcassets */; };
 		B96098561AEBC558007D6DC1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96098541AEBC558007D6DC1 /* LaunchScreen.xib */; };
 		B96098621AEBC558007D6DC1 /* TextbookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098611AEBC558007D6DC1 /* TextbookAppTests.swift */; };
+		D1D717851AEC19F200584091 /* Textbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D717841AEC19F200584091 /* Textbook.swift */; };
+		D1D717881AEC1A3600584091 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D717861AEC1A3600584091 /* MyBooksViewController.swift */; };
+		D1D717891AEC1A3600584091 /* TextbookCretorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D717871AEC1A3600584091 /* TextbookCretorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		B960985B1AEBC558007D6DC1 /* TextbookAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextbookAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96098601AEBC558007D6DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96098611AEBC558007D6DC1 /* TextbookAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextbookAppTests.swift; sourceTree = "<group>"; };
+		D1D717841AEC19F200584091 /* Textbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textbook.swift; sourceTree = "<group>"; };
+		D1D717861AEC1A3600584091 /* MyBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
+		D1D717871AEC1A3600584091 /* TextbookCretorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextbookCretorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,9 @@
 		B96098481AEBC558007D6DC1 /* TextbookApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1D717841AEC19F200584091 /* Textbook.swift */,
+				D1D717861AEC1A3600584091 /* MyBooksViewController.swift */,
+				D1D717871AEC1A3600584091 /* TextbookCretorViewController.swift */,
 				B960984B1AEBC558007D6DC1 /* AppDelegate.swift */,
 				B960984F1AEBC558007D6DC1 /* Main.storyboard */,
 				B96098521AEBC558007D6DC1 /* Images.xcassets */,
@@ -298,7 +307,10 @@
 			files = (
 				B960984C1AEBC558007D6DC1 /* AppDelegate.swift in Sources */,
 				2E2A030D1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift in Sources */,
+				D1D717851AEC19F200584091 /* Textbook.swift in Sources */,
+				D1D717881AEC1A3600584091 /* MyBooksViewController.swift in Sources */,
 				2EE86FEA1AEBD151004CF838 /* browseTableViewController.swift in Sources */,
+				D1D717891AEC1A3600584091 /* TextbookCretorViewController.swift in Sources */,
 				2E2A030B1AEC0A6900113A67 /* textbooksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
