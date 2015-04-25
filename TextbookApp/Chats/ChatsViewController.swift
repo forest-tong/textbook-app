@@ -12,10 +12,9 @@ class ChatsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         fetchChats()
         
-        navigationItem.leftBarButtonItem = editButtonItem() // TODO: KVO
         tableView.backgroundColor = UIColor.whiteColor()
         tableView.rowHeight = chatCellHeight
         tableView.separatorInset.left = chatCellInsetLeft
@@ -46,18 +45,8 @@ class ChatsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(ChatCell), forIndexPath: indexPath) as! ChatCell
-        cell.configureWithChat(account.chats[indexPath.row])
+        cell.configureWithChat(chats[indexPath.row])
         return cell
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            account.chats.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            if account.chats.count == 0 {
-                navigationItem.leftBarButtonItem = nil  // TODO: KVO
-            }
-        }
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
