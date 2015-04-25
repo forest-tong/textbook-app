@@ -8,6 +8,8 @@
 
 import UIKit
 
+var account = Account(user: User(ID: 1, username: "mattdipasquale", firstName: "Matt", lastName: "Di Pasquale"))
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId("itqhpHbOtwsSX82ks96OOcw2kiEgZZlq3PAbu0Oq", clientKey: "Ej3wgl6S8GV8sM6omA4Vhqy1qtOPfUMBFPqfYFBB")
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.backgroundColor = UIColor.whiteColor()
+        window!.rootViewController = UINavigationController(rootViewController: ChatsViewController())
+        window!.makeKeyAndVisible()
         
         return true
     }
