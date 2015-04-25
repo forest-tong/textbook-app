@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tDj-Xq-Y6C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tDj-Xq-Y6C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -75,6 +75,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yOe-Gs-gs5" kind="show" identifier="detailsSegue" id="Gjj-Gc-uc6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -85,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6y-Yp-4fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-163" y="758"/>
+            <point key="canvasLocation" x="1904" y="-125"/>
         </scene>
         <!--List of Courses-->
         <scene sceneID="kmm-jT-FVO">
@@ -202,9 +205,11 @@
                     </navigationItem>
                     <connections>
                         <segue destination="SNW-w6-GeS" kind="show" identifier="toCourseViewSegue" id="r7a-jJ-dU0"/>
+                        <segue destination="6RX-0a-VxR" kind="unwind" identifier="unwindToMyBooks" unwindAction="unwindToMyBooks:" id="xnM-CT-xhG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qi-h6-rH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6RX-0a-VxR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1575" y="1989"/>
         </scene>
@@ -251,7 +256,7 @@
             </objects>
             <point key="canvasLocation" x="2291" y="1982"/>
         </scene>
-        <!--Textbook Creator View Controller-->
+        <!--Title-->
         <scene sceneID="8XY-L7-bhX">
             <objects>
                 <tableViewController id="ddl-kY-OaZ" customClass="TextbookCreatorViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -353,10 +358,27 @@
                             <outlet property="delegate" destination="ddl-kY-OaZ" id="glQ-3u-zy0"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="W73-QH-AvQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WJk-7q-m0X">
+                            <connections>
+                                <action selector="onSaveButtonTap:" destination="ddl-kY-OaZ" id="mjy-VO-5WK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="conditionTextField" destination="bbI-0T-9Mf" id="gR0-9y-ubM"/>
+                        <outlet property="editionTextField" destination="RH7-QW-MEj" id="Bko-BQ-k5O"/>
+                        <outlet property="nameLabel" destination="oDK-ex-1hb" id="hkh-Ii-sw2"/>
+                        <outlet property="nameTextField" destination="oDK-ex-1hb" id="jnI-xr-ryj"/>
+                        <outlet property="notesTextView" destination="mFb-4q-AFK" id="6Fr-92-idG"/>
+                        <outlet property="priceTextField" destination="xiF-lE-Yiz" id="Bhk-34-Oli"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Js2-nH-onq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2991" y="1982"/>
+            <point key="canvasLocation" x="2967" y="1982"/>
         </scene>
         <!--My Books for Sale-->
         <scene sceneID="xCA-EI-Kd0">
@@ -413,6 +435,143 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zX4-yq-0ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="528" y="1222"/>
+        </scene>
+        <!--Textbook Detail-->
+        <scene sceneID="sxo-WH-1o3">
+            <objects>
+                <tableViewController title="Textbook Detail" id="VKQ-Dm-mgB" customClass="DetailsTableViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="568-A8-YMg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Name" id="AjB-u6-ztB">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="B3h-dB-04z">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B3h-dB-04z" id="yBh-Iw-ji5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R0j-ta-ITl">
+                                                    <rect key="frame" x="8" y="5" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Edition" id="8MJ-bM-gBd">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jZ1-ox-65V">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jZ1-ox-65V" id="dzM-2M-hwV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8X-DV-IS6">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Price" id="2KF-q2-dfP">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fiP-iP-t5l">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fiP-iP-t5l" id="SKc-01-LDn">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TyX-bK-HdM">
+                                                    <rect key="frame" x="8" y="5" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Condition" id="r0A-1o-OQw">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GqM-FI-elL">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GqM-FI-elL" id="jq8-W8-NvW">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jad-Q5-1gT">
+                                                    <rect key="frame" x="8" y="5" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Notes" id="u0d-EO-gOz">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="202" id="GBu-U8-LF7">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GBu-U8-LF7" id="KXv-dT-9eF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbO-Em-rSK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="201"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="GUQ-3Q-Fvg">
+                        <barButtonItem key="rightBarButtonItem" title="Contact" id="W4c-Bs-4E8">
+                            <connections>
+                                <action selector="contactButtonTap:" destination="VKQ-Dm-mgB" id="d53-o3-jFQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="conditionTF" destination="jad-Q5-1gT" id="DZO-8l-0kd"/>
+                        <outlet property="editionTF" destination="g8X-DV-IS6" id="4BR-Mx-igC"/>
+                        <outlet property="nameTF" destination="R0j-ta-ITl" id="eZt-ga-vz6"/>
+                        <outlet property="notesTF" destination="sbO-Em-rSK" id="71m-fJ-CNv"/>
+                        <outlet property="priceTF" destination="TyX-bK-HdM" id="mvv-wK-HCS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WeJ-tE-Xk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="294"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jzh-kS-Umr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yOe-Gs-gs5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qdc-5i-JSw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VKQ-Dm-mgB" kind="relationship" relationship="rootViewController" id="8Ra-OX-ACB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EnO-46-1oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2520" y="294"/>
         </scene>
     </scenes>
 </document>

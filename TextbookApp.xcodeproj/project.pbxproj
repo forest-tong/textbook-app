@@ -7,14 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E2A03021AEBE04A00113A67 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FC1AEBE04A00113A67 /* Bolts.framework */; };
-		2E2A03041AEBE04A00113A67 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FE1AEBE04A00113A67 /* ParseCrashReporting.framework */; };
 		2E3699541AEC3BE000975082 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994E1AEC3BE000975082 /* Parse.framework */; };
 		2E3699551AEC3BE000975082 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994F1AEC3BE000975082 /* ParseFacebookUtils.framework */; };
 		2E3699561AEC3BE000975082 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699501AEC3BE000975082 /* ParseFacebookUtilsV4.framework */; };
 		2E3699571AEC3BE000975082 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699511AEC3BE000975082 /* Bolts.framework */; };
 		2E3699581AEC3BE000975082 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699521AEC3BE000975082 /* ParseCrashReporting.framework */; };
 		2E3699591AEC3BE000975082 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699531AEC3BE000975082 /* ParseUI.framework */; };
+		2E7292FB1AEC542200546E21 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7292FA1AEC542200546E21 /* InterfaceController.swift */; };
+		2E7292FD1AEC542200546E21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E7292FC1AEC542200546E21 /* Images.xcassets */; };
+		2E7293011AEC542200546E21 /* TextbookApp WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */; };
+		2E7293091AEC542200546E21 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7293071AEC542200546E21 /* Interface.storyboard */; };
+		2E72930B1AEC542200546E21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E72930A1AEC542200546E21 /* Images.xcassets */; };
+		2E72930E1AEC542200546E21 /* TextbookApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E7293161AEC55DE00546E21 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD71AEBC93C004CF838 /* AudioToolbox.framework */; };
+		2E7293171AEC55E200546E21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD51AEBC936004CF838 /* Foundation.framework */; };
+		2E7293181AEC55E600546E21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD31AEBC931004CF838 /* CoreGraphics.framework */; };
+		2E7293191AEC55ED00546E21 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD11AEBC92C004CF838 /* CoreLocation.framework */; };
+		2E72931A1AEC55F200546E21 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FCF1AEBC918004CF838 /* libz.dylib */; };
+		2E72931B1AEC55F700546E21 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FCD1AEBC8F2004CF838 /* MobileCoreServices.framework */; };
+		2E72931C1AEC55FB00546E21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FCB1AEBC8ED004CF838 /* QuartzCore.framework */; };
+		2E72931D1AEC560200546E21 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC91AEBC8E8004CF838 /* Security.framework */; };
+		2E72931E1AEC560700546E21 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
+		2E72931F1AEC560D00546E21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
+		2E7293201AEC561300546E21 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
+		2E7293211AEC562E00546E21 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699511AEC3BE000975082 /* Bolts.framework */; };
+		2E7293221AEC562E00546E21 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994E1AEC3BE000975082 /* Parse.framework */; };
+		2E7293231AEC562E00546E21 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699521AEC3BE000975082 /* ParseCrashReporting.framework */; };
+		2E7293241AEC562E00546E21 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994F1AEC3BE000975082 /* ParseFacebookUtils.framework */; };
+		2E7293251AEC562E00546E21 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699501AEC3BE000975082 /* ParseFacebookUtilsV4.framework */; };
+		2E7293261AEC562E00546E21 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699531AEC3BE000975082 /* ParseUI.framework */; };
+		2E72932A1AEC5AF600546E21 /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7293291AEC5AF600546E21 /* DetailsTableViewController.swift */; };
 		2EE86FC41AEBC8D3004CF838 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
 		2EE86FC61AEBC8DA004CF838 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
 		2EE86FC81AEBC8DF004CF838 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
@@ -51,15 +73,23 @@
 		D1A8EB0D1AEC3A1200732D29 /* browseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */; };
 		D1A8EB0E1AEC3A1200732D29 /* addBookCourseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */; };
 		D1A8EB0F1AEC3A1200732D29 /* textbooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */; };
-		D1D717901AEC1C7400584091 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D7178A1AEC1C7400584091 /* Bolts.framework */; };
-		D1D717911AEC1C7400584091 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D7178B1AEC1C7400584091 /* Parse.framework */; };
-		D1D717921AEC1C7400584091 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D7178C1AEC1C7400584091 /* ParseCrashReporting.framework */; };
-		D1D717931AEC1C7400584091 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D7178D1AEC1C7400584091 /* ParseFacebookUtils.framework */; };
-		D1D717941AEC1C7400584091 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D7178E1AEC1C7400584091 /* ParseFacebookUtilsV4.framework */; };
-		D1D717951AEC1C7400584091 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D7178F1AEC1C7400584091 /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2E7293021AEC542200546E21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B960983E1AEBC558007D6DC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E7292FF1AEC542200546E21;
+			remoteInfo = "TextbookApp WatchKit App";
+		};
+		2E72930C1AEC542200546E21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B960983E1AEBC558007D6DC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E7292F51AEC542200546E21;
+			remoteInfo = "TextbookApp WatchKit Extension";
+		};
 		B960985C1AEBC558007D6DC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B960983E1AEBC558007D6DC1 /* Project object */;
@@ -69,9 +99,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E7293151AEC542200546E21 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E72930E1AEC542200546E21 /* TextbookApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2E2A02FC1AEBE04A00113A67 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1-5/Bolts.framework"; sourceTree = "<group>"; };
-		2E2A02FE1AEBE04A00113A67 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../../Downloads/parse-library-1-5/ParseCrashReporting.framework"; sourceTree = "<group>"; };
 		2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textbooksTableViewController.swift; sourceTree = "<group>"; };
 		2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBookCourseListTableViewController.swift; sourceTree = "<group>"; };
 		2E36994E1AEC3BE000975082 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1-6/Parse.framework"; sourceTree = "<group>"; };
@@ -80,6 +122,15 @@
 		2E3699511AEC3BE000975082 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1-6/Bolts.framework"; sourceTree = "<group>"; };
 		2E3699521AEC3BE000975082 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../../Downloads/parse-library-1-6/ParseCrashReporting.framework"; sourceTree = "<group>"; };
 		2E3699531AEC3BE000975082 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Downloads/parse-library-1-6/ParseUI.framework"; sourceTree = "<group>"; };
+		2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TextbookApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7292F91AEC542200546E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E7292FA1AEC542200546E21 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2E7292FC1AEC542200546E21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TextbookApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E7293061AEC542200546E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E7293081AEC542200546E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2E72930A1AEC542200546E21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E7293291AEC5AF600546E21 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -118,15 +169,33 @@
 		D1A8EB061AEC347900732D29 /* Textbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textbook.swift; sourceTree = "<group>"; };
 		D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextbookCreatorViewController.swift; sourceTree = "<group>"; };
 		D1A8EB0B1AEC370800732D29 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		D1D7178A1AEC1C7400584091 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1.7.1/Bolts.framework"; sourceTree = "<group>"; };
-		D1D7178B1AEC1C7400584091 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.7.1/Parse.framework"; sourceTree = "<group>"; };
-		D1D7178C1AEC1C7400584091 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseCrashReporting.framework"; sourceTree = "<group>"; };
-		D1D7178D1AEC1C7400584091 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
-		D1D7178E1AEC1C7400584091 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
-		D1D7178F1AEC1C7400584091 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2E7292F31AEC542200546E21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7293201AEC561300546E21 /* libsqlite3.dylib in Frameworks */,
+				2E72931F1AEC560D00546E21 /* SystemConfiguration.framework in Frameworks */,
+				2E72931E1AEC560700546E21 /* StoreKit.framework in Frameworks */,
+				2E72931D1AEC560200546E21 /* Security.framework in Frameworks */,
+				2E72931C1AEC55FB00546E21 /* QuartzCore.framework in Frameworks */,
+				2E72931B1AEC55F700546E21 /* MobileCoreServices.framework in Frameworks */,
+				2E72931A1AEC55F200546E21 /* libz.dylib in Frameworks */,
+				2E7293191AEC55ED00546E21 /* CoreLocation.framework in Frameworks */,
+				2E7293181AEC55E600546E21 /* CoreGraphics.framework in Frameworks */,
+				2E7293171AEC55E200546E21 /* Foundation.framework in Frameworks */,
+				2E7293161AEC55DE00546E21 /* AudioToolbox.framework in Frameworks */,
+				2E7293211AEC562E00546E21 /* Bolts.framework in Frameworks */,
+				2E7293221AEC562E00546E21 /* Parse.framework in Frameworks */,
+				2E7293231AEC562E00546E21 /* ParseCrashReporting.framework in Frameworks */,
+				2E7293241AEC562E00546E21 /* ParseFacebookUtils.framework in Frameworks */,
+				2E7293251AEC562E00546E21 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				2E7293261AEC562E00546E21 /* ParseUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B96098431AEBC558007D6DC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,24 +208,16 @@
 				2EE86FD81AEBC93C004CF838 /* AudioToolbox.framework in Frameworks */,
 				2EE86FD61AEBC936004CF838 /* Foundation.framework in Frameworks */,
 				2EE86FD41AEBC931004CF838 /* CoreGraphics.framework in Frameworks */,
-				2E2A03021AEBE04A00113A67 /* Bolts.framework in Frameworks */,
 				2E3699591AEC3BE000975082 /* ParseUI.framework in Frameworks */,
 				2E3699541AEC3BE000975082 /* Parse.framework in Frameworks */,
-				D1D717911AEC1C7400584091 /* Parse.framework in Frameworks */,
-				D1D717931AEC1C7400584091 /* ParseFacebookUtils.framework in Frameworks */,
 				2EE86FD21AEBC92C004CF838 /* CoreLocation.framework in Frameworks */,
-				2E2A03041AEBE04A00113A67 /* ParseCrashReporting.framework in Frameworks */,
 				2EE86FD01AEBC918004CF838 /* libz.dylib in Frameworks */,
 				2EE86FCE1AEBC8F2004CF838 /* MobileCoreServices.framework in Frameworks */,
-				D1D717951AEC1C7400584091 /* ParseUI.framework in Frameworks */,
 				2EE86FCC1AEBC8ED004CF838 /* QuartzCore.framework in Frameworks */,
 				2EE86FCA1AEBC8E8004CF838 /* Security.framework in Frameworks */,
 				2EE86FC81AEBC8DF004CF838 /* StoreKit.framework in Frameworks */,
 				2EE86FC61AEBC8DA004CF838 /* SystemConfiguration.framework in Frameworks */,
-				D1D717941AEC1C7400584091 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				2EE86FC41AEBC8D3004CF838 /* libsqlite3.dylib in Frameworks */,
-				D1D717901AEC1C7400584091 /* Bolts.framework in Frameworks */,
-				D1D717921AEC1C7400584091 /* ParseCrashReporting.framework in Frameworks */,
 				2E3699581AEC3BE000975082 /* ParseCrashReporting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +232,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E7292F71AEC542200546E21 /* TextbookApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2E7292FA1AEC542200546E21 /* InterfaceController.swift */,
+				2E7292FC1AEC542200546E21 /* Images.xcassets */,
+				2E7292F81AEC542200546E21 /* Supporting Files */,
+			);
+			path = "TextbookApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		2E7292F81AEC542200546E21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E7292F91AEC542200546E21 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E7293041AEC542200546E21 /* TextbookApp WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				2E7293071AEC542200546E21 /* Interface.storyboard */,
+				2E72930A1AEC542200546E21 /* Images.xcassets */,
+				2E7293051AEC542200546E21 /* Supporting Files */,
+			);
+			path = "TextbookApp WatchKit App";
+			sourceTree = "<group>";
+		};
+		2E7293051AEC542200546E21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E7293061AEC542200546E21 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		2EE86FD91AEBC95A004CF838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +311,8 @@
 			children = (
 				B96098461AEBC558007D6DC1 /* TextbookApp.app */,
 				B960985B1AEBC558007D6DC1 /* TextbookAppTests.xctest */,
+				2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */,
+				2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,6 +327,7 @@
 				D1A8EB061AEC347900732D29 /* Textbook.swift */,
 				D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */,
 				B960984F1AEBC558007D6DC1 /* Main.storyboard */,
+				2E7293291AEC5AF600546E21 /* DetailsTableViewController.swift */,
 				B96098521AEBC558007D6DC1 /* Images.xcassets */,
 				2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */,
 				2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */,
@@ -298,6 +398,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2E7292F51AEC542200546E21 /* TextbookApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E7293141AEC542200546E21 /* Build configuration list for PBXNativeTarget "TextbookApp WatchKit Extension" */;
+			buildPhases = (
+				2E7292F21AEC542200546E21 /* Sources */,
+				2E7292F31AEC542200546E21 /* Frameworks */,
+				2E7292F41AEC542200546E21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E7293031AEC542200546E21 /* PBXTargetDependency */,
+			);
+			name = "TextbookApp WatchKit Extension";
+			productName = "TextbookApp WatchKit Extension";
+			productReference = 2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		2E7292FF1AEC542200546E21 /* TextbookApp WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E7293131AEC542200546E21 /* Build configuration list for PBXNativeTarget "TextbookApp WatchKit App" */;
+			buildPhases = (
+				2E7292FE1AEC542200546E21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TextbookApp WatchKit App";
+			productName = "TextbookApp WatchKit App";
+			productReference = 2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		B96098451AEBC558007D6DC1 /* TextbookApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96098651AEBC558007D6DC1 /* Build configuration list for PBXNativeTarget "TextbookApp" */;
@@ -305,10 +438,12 @@
 				B96098421AEBC558007D6DC1 /* Sources */,
 				B96098431AEBC558007D6DC1 /* Frameworks */,
 				B96098441AEBC558007D6DC1 /* Resources */,
+				2E7293151AEC542200546E21 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2E72930D1AEC542200546E21 /* PBXTargetDependency */,
 			);
 			name = TextbookApp;
 			productName = TextbookApp;
@@ -342,6 +477,12 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Forest Tong";
 				TargetAttributes = {
+					2E7292F51AEC542200546E21 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					2E7292FF1AEC542200546E21 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					B96098451AEBC558007D6DC1 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -366,11 +507,31 @@
 			targets = (
 				B96098451AEBC558007D6DC1 /* TextbookApp */,
 				B960985A1AEBC558007D6DC1 /* TextbookAppTests */,
+				2E7292F51AEC542200546E21 /* TextbookApp WatchKit Extension */,
+				2E7292FF1AEC542200546E21 /* TextbookApp WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2E7292F41AEC542200546E21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7293011AEC542200546E21 /* TextbookApp WatchKit App.app in Resources */,
+				2E7292FD1AEC542200546E21 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E7292FE1AEC542200546E21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7293091AEC542200546E21 /* Interface.storyboard in Resources */,
+				2E72930B1AEC542200546E21 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B96098441AEBC558007D6DC1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +553,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2E7292F21AEC542200546E21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7292FB1AEC542200546E21 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B96098421AEBC558007D6DC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +597,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2E7293031AEC542200546E21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E7292FF1AEC542200546E21 /* TextbookApp WatchKit App */;
+			targetProxy = 2E7293021AEC542200546E21 /* PBXContainerItemProxy */;
+		};
+		2E72930D1AEC542200546E21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E7292F51AEC542200546E21 /* TextbookApp WatchKit Extension */;
+			targetProxy = 2E72930C1AEC542200546E21 /* PBXContainerItemProxy */;
+		};
 		B960985D1AEBC558007D6DC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B96098451AEBC558007D6DC1 /* TextbookApp */;
@@ -436,6 +615,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2E7293071AEC542200546E21 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E7293081AEC542200546E21 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		B960984F1AEBC558007D6DC1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,6 +634,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2E72930F1AEC542200546E21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kevingerami/Downloads/parse-library-1-6",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TextbookApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextbookApp-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		2E7293101AEC542200546E21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kevingerami/Downloads/parse-library-1-6",
+				);
+				INFOPLIST_FILE = "TextbookApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextbookApp-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		2E7293111AEC542200546E21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = TextbookApp_WatchKit_Extension;
+				INFOPLIST_FILE = "TextbookApp WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		2E7293121AEC542200546E21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = TextbookApp_WatchKit_Extension;
+				INFOPLIST_FILE = "TextbookApp WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		B96098631AEBC558007D6DC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -601,6 +854,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2E7293131AEC542200546E21 /* Build configuration list for PBXNativeTarget "TextbookApp WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E7293111AEC542200546E21 /* Debug */,
+				2E7293121AEC542200546E21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2E7293141AEC542200546E21 /* Build configuration list for PBXNativeTarget "TextbookApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E72930F1AEC542200546E21 /* Debug */,
+				2E7293101AEC542200546E21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B96098411AEBC558007D6DC1 /* Build configuration list for PBXProject "TextbookApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
