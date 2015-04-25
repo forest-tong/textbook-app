@@ -21,7 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("itqhpHbOtwsSX82ks96OOcw2kiEgZZlq3PAbu0Oq", clientKey: "Ej3wgl6S8GV8sM6omA4Vhqy1qtOPfUMBFPqfYFBB")
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.backgroundColor = UIColor.whiteColor()
-        window!.rootViewController = UINavigationController(rootViewController: ChatsViewController())
+        
+        let tabBarController = UITabBarController()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let browserViewController = storyboard.instantiateViewControllerWithIdentifier("Browse") as! UINavigationController
+        let chatsViewController = UINavigationController(rootViewController: ChatsViewController())
+        let controllers = [browserViewController, chatsViewController]
+        tabBarController.viewControllers = controllers;
+        
+        window!.rootViewController = tabBarController
         window!.makeKeyAndVisible()
         
         return true
