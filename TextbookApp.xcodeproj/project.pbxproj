@@ -19,6 +19,23 @@
 		2E7293091AEC542200546E21 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7293071AEC542200546E21 /* Interface.storyboard */; };
 		2E72930B1AEC542200546E21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E72930A1AEC542200546E21 /* Images.xcassets */; };
 		2E72930E1AEC542200546E21 /* TextbookApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2E7293161AEC55DE00546E21 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD71AEBC93C004CF838 /* AudioToolbox.framework */; };
+		2E7293171AEC55E200546E21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD51AEBC936004CF838 /* Foundation.framework */; };
+		2E7293181AEC55E600546E21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD31AEBC931004CF838 /* CoreGraphics.framework */; };
+		2E7293191AEC55ED00546E21 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD11AEBC92C004CF838 /* CoreLocation.framework */; };
+		2E72931A1AEC55F200546E21 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FCF1AEBC918004CF838 /* libz.dylib */; };
+		2E72931B1AEC55F700546E21 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FCD1AEBC8F2004CF838 /* MobileCoreServices.framework */; };
+		2E72931C1AEC55FB00546E21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FCB1AEBC8ED004CF838 /* QuartzCore.framework */; };
+		2E72931D1AEC560200546E21 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC91AEBC8E8004CF838 /* Security.framework */; };
+		2E72931E1AEC560700546E21 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
+		2E72931F1AEC560D00546E21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
+		2E7293201AEC561300546E21 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
+		2E7293211AEC562E00546E21 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699511AEC3BE000975082 /* Bolts.framework */; };
+		2E7293221AEC562E00546E21 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994E1AEC3BE000975082 /* Parse.framework */; };
+		2E7293231AEC562E00546E21 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699521AEC3BE000975082 /* ParseCrashReporting.framework */; };
+		2E7293241AEC562E00546E21 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E36994F1AEC3BE000975082 /* ParseFacebookUtils.framework */; };
+		2E7293251AEC562E00546E21 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699501AEC3BE000975082 /* ParseFacebookUtilsV4.framework */; };
+		2E7293261AEC562E00546E21 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3699531AEC3BE000975082 /* ParseUI.framework */; };
 		2EE86FC41AEBC8D3004CF838 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
 		2EE86FC61AEBC8DA004CF838 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
 		2EE86FC81AEBC8DF004CF838 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
@@ -161,6 +178,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7293201AEC561300546E21 /* libsqlite3.dylib in Frameworks */,
+				2E72931F1AEC560D00546E21 /* SystemConfiguration.framework in Frameworks */,
+				2E72931E1AEC560700546E21 /* StoreKit.framework in Frameworks */,
+				2E72931D1AEC560200546E21 /* Security.framework in Frameworks */,
+				2E72931C1AEC55FB00546E21 /* QuartzCore.framework in Frameworks */,
+				2E72931B1AEC55F700546E21 /* MobileCoreServices.framework in Frameworks */,
+				2E72931A1AEC55F200546E21 /* libz.dylib in Frameworks */,
+				2E7293191AEC55ED00546E21 /* CoreLocation.framework in Frameworks */,
+				2E7293181AEC55E600546E21 /* CoreGraphics.framework in Frameworks */,
+				2E7293171AEC55E200546E21 /* Foundation.framework in Frameworks */,
+				2E7293161AEC55DE00546E21 /* AudioToolbox.framework in Frameworks */,
+				2E7293211AEC562E00546E21 /* Bolts.framework in Frameworks */,
+				2E7293221AEC562E00546E21 /* Parse.framework in Frameworks */,
+				2E7293231AEC562E00546E21 /* ParseCrashReporting.framework in Frameworks */,
+				2E7293241AEC562E00546E21 /* ParseFacebookUtils.framework in Frameworks */,
+				2E7293251AEC562E00546E21 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				2E7293261AEC562E00546E21 /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +652,10 @@
 		2E72930F1AEC542200546E21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kevingerami/Downloads/parse-library-1-6",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -626,16 +664,22 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextbookApp-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		2E7293101AEC542200546E21 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kevingerami/Downloads/parse-library-1-6",
+				);
 				INFOPLIST_FILE = "TextbookApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextbookApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
