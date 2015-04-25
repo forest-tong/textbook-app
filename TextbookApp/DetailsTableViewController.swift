@@ -8,13 +8,13 @@
 
 import UIKit
 
-class DetailsTableViewController: UITableViewController, UITextFieldDelegate {
+class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     var textbook: PFObject!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var editionTF: UITextField!
     @IBOutlet weak var priceTF: UITextField!
     @IBOutlet weak var conditionTF: UITextField!
-    @IBOutlet weak var notesTF: UITextView!
+    @IBOutlet weak var notesTV: UITextView!
     @IBAction func contactButtonTap(sender: AnyObject) {
         
     }
@@ -34,9 +34,17 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate {
         editionTF.delegate = self
         priceTF.delegate = self
         conditionTF.delegate = self
-        notesTF.delegate = self
+        notesTV.delegate = self
         
-       
+        nameTF.text = textbook.valueForKey("name") as! String
+        editionTF.text = textbook.valueForKey("edition") as! String
+        priceTF.text = textbook.valueForKey("price") as! String
+        conditionTF.text = textbook.valueForKey("condition") as! String
+        notesTV.text = textbook.valueForKey("notes") as! String
+    }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        return false
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
