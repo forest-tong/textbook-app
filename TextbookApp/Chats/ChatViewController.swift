@@ -5,7 +5,7 @@ let toolBarMinHeight: CGFloat = 44
 let textViewMaxHeight: (portrait: CGFloat, landscape: CGFloat) = (portrait: 272, landscape: 90)
 
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
-    let chat: Chat
+    var chat: Chat!
     var tableView: UITableView!
     var toolBar: UIToolbar!
     var textView: UITextView!
@@ -69,7 +69,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        println(chat.messages)
         chat.messages = [
             [
                 Message(incoming: true, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
@@ -259,7 +259,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         textView.becomeFirstResponder()
 
         chat.messages.append([Message(incoming: false, text: textView.text, sentDate: NSDate())])
-        chat.save()
         textView.text = nil
         updateTextViewHeight()
         sendButton.enabled = false

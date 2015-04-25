@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D3AA5CA6-FC9A-4D51-B011-595932F57F6E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TextbookApp</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5119A5722008D35B5A48A230406CDD56203D6FA9</key>
 		<string>https://github.com/forest-tong/textbook-app.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TextbookApp.xcodeproj</string>
+	<string>TextbookApp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5119A5722008D35B5A48A230406CDD56203D6FA9</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>5119A5722008D35B5A48A230406CDD56203D6FA9</string>
 			<key>IDESourceControlWCCName</key>
-			<string>textbook-app</string>
+			<string>TextbookApp</string>
 		</dict>
 	</array>
 </dict>
