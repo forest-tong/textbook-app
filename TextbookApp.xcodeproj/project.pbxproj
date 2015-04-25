@@ -8,13 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E2A03021AEBE04A00113A67 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FC1AEBE04A00113A67 /* Bolts.framework */; };
-		2E2A03031AEBE04A00113A67 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FD1AEBE04A00113A67 /* Parse.framework */; };
 		2E2A03041AEBE04A00113A67 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FE1AEBE04A00113A67 /* ParseCrashReporting.framework */; };
-		2E2A03051AEBE04A00113A67 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A02FF1AEBE04A00113A67 /* ParseFacebookUtils.framework */; };
-		2E2A03061AEBE04A00113A67 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A03001AEBE04A00113A67 /* ParseFacebookUtilsV4.framework */; };
-		2E2A03071AEBE04A00113A67 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2A03011AEBE04A00113A67 /* ParseUI.framework */; };
-		2E2A030B1AEC0A6900113A67 /* textbooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */; };
-		2E2A030D1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */; };
 		2EE86FC41AEBC8D3004CF838 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */; };
 		2EE86FC61AEBC8DA004CF838 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */; };
 		2EE86FC81AEBC8DF004CF838 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FC71AEBC8DF004CF838 /* StoreKit.framework */; };
@@ -26,7 +20,6 @@
 		2EE86FD41AEBC931004CF838 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD31AEBC931004CF838 /* CoreGraphics.framework */; };
 		2EE86FD61AEBC936004CF838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD51AEBC936004CF838 /* Foundation.framework */; };
 		2EE86FD81AEBC93C004CF838 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD71AEBC93C004CF838 /* AudioToolbox.framework */; };
-		2EE86FEA1AEBD151004CF838 /* browseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */; };
 		B960984C1AEBC558007D6DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960984B1AEBC558007D6DC1 /* AppDelegate.swift */; };
 		B96098511AEBC558007D6DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B960984F1AEBC558007D6DC1 /* Main.storyboard */; };
 		B96098531AEBC558007D6DC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96098521AEBC558007D6DC1 /* Images.xcassets */; };
@@ -50,6 +43,9 @@
 		B96098BF1AEBE38D007D6DC1 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */; };
 		B96098C01AEBE38D007D6DC1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AE1AEBE38D007D6DC1 /* User.swift */; };
 		B96098C11AEBE38D007D6DC1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AF1AEBE38D007D6DC1 /* UserCell.swift */; };
+		B9D05B231AEC1A0500438889 /* StartTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D05B221AEC1A0500438889 /* StartTabBarController.swift */; };
+		B9D05B251AEC1A8900438889 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D05B241AEC1A8900438889 /* Social.framework */; };
+		B9D05B271AEC1A8E00438889 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D05B261AEC1A8E00438889 /* Accounts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +60,7 @@
 
 /* Begin PBXFileReference section */
 		2E2A02FC1AEBE04A00113A67 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1-5/Bolts.framework"; sourceTree = "<group>"; };
-		2E2A02FD1AEBE04A00113A67 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1-5/Parse.framework"; sourceTree = "<group>"; };
 		2E2A02FE1AEBE04A00113A67 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../../Downloads/parse-library-1-5/ParseCrashReporting.framework"; sourceTree = "<group>"; };
-		2E2A02FF1AEBE04A00113A67 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../Downloads/parse-library-1-5/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
-		2E2A03001AEBE04A00113A67 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../Downloads/parse-library-1-5/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
-		2E2A03011AEBE04A00113A67 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Downloads/parse-library-1-5/ParseUI.framework"; sourceTree = "<group>"; };
 		2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textbooksTableViewController.swift; sourceTree = "<group>"; };
 		2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBookCourseListTableViewController.swift; sourceTree = "<group>"; };
 		2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -110,6 +102,9 @@
 		B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		B96098AE1AEBE38D007D6DC1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B96098AF1AEBE38D007D6DC1 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B9D05B221AEC1A0500438889 /* StartTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTabBarController.swift; sourceTree = "<group>"; };
+		B9D05B241AEC1A8900438889 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B9D05B261AEC1A8E00438889 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D05B271AEC1A8E00438889 /* Accounts.framework in Frameworks */,
+				B9D05B251AEC1A8900438889 /* Social.framework in Frameworks */,
 				2EE86FD81AEBC93C004CF838 /* AudioToolbox.framework in Frameworks */,
 				2EE86FD61AEBC936004CF838 /* Foundation.framework in Frameworks */,
 				2EE86FD41AEBC931004CF838 /* CoreGraphics.framework in Frameworks */,
@@ -152,6 +149,8 @@
 		2EE86FD91AEBC95A004CF838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9D05B261AEC1A8E00438889 /* Accounts.framework */,
+				B9D05B241AEC1A8900438889 /* Social.framework */,
 				B960986C1AEBE049007D6DC1 /* Bolts.framework */,
 				B960986D1AEBE049007D6DC1 /* Parse.framework */,
 				B960986E1AEBE049007D6DC1 /* ParseCrashReporting.framework */,
@@ -201,10 +200,10 @@
 				B960984F1AEBC558007D6DC1 /* Main.storyboard */,
 				B96098521AEBC558007D6DC1 /* Images.xcassets */,
 				B96098541AEBC558007D6DC1 /* LaunchScreen.xib */,
-				B96098491AEBC558007D6DC1 /* Supporting Files */,
 				2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */,
 				2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */,
 				2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */,
+				B9D05B221AEC1A0500438889 /* StartTabBarController.swift */,
 			);
 			path = TextbookApp;
 			sourceTree = "<group>";
@@ -371,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B96098C01AEBE38D007D6DC1 /* User.swift in Sources */,
+				B9D05B231AEC1A0500438889 /* StartTabBarController.swift in Sources */,
 				B96098BE1AEBE38D007D6DC1 /* MessageSentDateCell.swift in Sources */,
 				B96098B21AEBE38D007D6DC1 /* Chat.swift in Sources */,
 				B96098BF1AEBE38D007D6DC1 /* PlaceholderTextView.swift in Sources */,

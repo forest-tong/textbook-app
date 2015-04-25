@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="713" y="326"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Start Tab Bar Controller-->
         <scene sceneID="hgM-sN-mVM">
             <objects>
-                <tabBarController id="tDj-Xq-Y6C" sceneMemberID="viewController">
+                <tabBarController id="tDj-Xq-Y6C" customClass="StartTabBarController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="oxt-1j-l9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
