@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tDj-Xq-Y6C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tDj-Xq-Y6C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Browse Table View Controller-->
@@ -126,12 +127,17 @@
                                     <segue destination="Kbl-0N-BnZ" kind="embed" id="qXb-KX-RN7"/>
                                 </connections>
                             </containerView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Courses" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTG-LT-CG3">
+                            <searchBar contentMode="redraw" placeholder="Search Courses" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTG-LT-CG3">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gTG-LT-CG3" secondAttribute="trailing" constant="-16" id="AMj-mJ-W9X"/>
+                            <constraint firstItem="gTG-LT-CG3" firstAttribute="top" secondItem="yUn-Rs-huQ" secondAttribute="bottom" id="IMe-qV-IyV"/>
+                            <constraint firstItem="gTG-LT-CG3" firstAttribute="leading" secondItem="H54-cp-n29" secondAttribute="leadingMargin" constant="-16" id="rLH-Dv-xhg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List of Courses" id="5nA-f8-zzj"/>
                     <connections>
