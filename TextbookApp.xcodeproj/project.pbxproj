@@ -323,6 +323,8 @@
 				B9814B0E1AECD1D00070A321 /* LOGOtextbookSCREEN.png */,
 				B9814B091AECCD340070A321 /* Info.plist */,
 				B9814B071AECCD190070A321 /* Launch Screen.xib */,
+				D18F909E1AECBBC1005F89DF /* LogoTextbook.png */,
+				D18F909F1AECBBC1005F89DF /* LOGOtextbook.svg */,
 				2E7292F71AEC542200546E21 /* TextbookApp WatchKit Extension */,
 				2E7293041AEC542200546E21 /* TextbookApp WatchKit App */,
 				2EE86FD91AEBC95A004CF838 /* Frameworks */,
@@ -568,6 +570,9 @@
 				B9814B081AECCD190070A321 /* Launch Screen.xib in Resources */,
 				B9814B131AECD3970070A321 /* LOGO Icon small.png in Resources */,
 				B9814B0A1AECCD340070A321 /* Info.plist in Resources */,
+				D18F90A11AECBBC1005F89DF /* LOGOtextbook.svg in Resources */,
+				D18F90A01AECBBC1005F89DF /* LogoTextbook.png in Resources */,
+				B96098511AEBC558007D6DC1 /* Main.storyboard in Resources */,
 				B96098B71AEBE38D007D6DC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
