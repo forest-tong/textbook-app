@@ -42,6 +42,26 @@ class TextbookCreatorViewController: UITableViewController {
         book.price = (priceTextField.text as NSString).doubleValue
         book.condition = conditionTextField.text
         book.notes = notesTextView.text
+        
+        if (course["textbooks"] == nil) {
+            course["textbooks"] = [book]
+        } else {
+            var courseTextbooks = course["textbooks"] as! [Textbook]
+            courseTextbooks.append(book)
+            course["textbooks"] = courseTextbooks
+        }
+        course.save()
+            
+        let user = PFUser.currentUser()!
+        if (user["textbooks"] == nil) {
+            user["textbooks"] = [book]
+        } else {
+            var userTextbooks = PFUser.currentUser()!["textbooks"] as! [Textbook]
+            userTextbooks.append(book)
+            PFUser.currentUser()!["textbooks"] = userTextbooks
+        }
+        PFUser.currentUser()!.save()
+        
         book.saveInBackgroundWithBlock(nil)
         
         performSegueWithIdentifier("unwindToMyBooks", sender: self)
