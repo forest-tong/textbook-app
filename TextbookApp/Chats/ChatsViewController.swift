@@ -6,6 +6,7 @@ class ChatsViewController: UITableViewController {
     var chats = [Chat]()
 
     convenience init() {
+        println("init")
         self.init(style: .Plain)
         title = "Chats"
     }
@@ -14,6 +15,7 @@ class ChatsViewController: UITableViewController {
         super.viewDidLoad()
         
         let chat = Chat(me: PFUser.currentUser()!, you: PFUser.currentUser()!, lastMessageSentDate: NSDate())
+        chat.save()
         let i = PFUser.currentUser()!
         chat.messages = [
             Message(me: i, you: i, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
@@ -24,13 +26,10 @@ class ChatsViewController: UITableViewController {
         ]
         let tempChats = [chat]
         let currentUser = PFUser.currentUser()!
-        currentUser.setValue(tempChats, forKey: "chats")
-        chat.save()
-        currentUser.save()
-        println("completed")
-        chat.saveInBackgroundWithBlock(nil)
+        currentUser.setObject(tempChats, forKey: "chats")
         currentUser.saveInBackgroundWithBlock(nil)
-        self.chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
+        chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
+        println(chats[0])
         
         tableView.backgroundColor = UIColor.whiteColor()
         tableView.rowHeight = chatCellHeight

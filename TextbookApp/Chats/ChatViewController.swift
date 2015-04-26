@@ -56,7 +56,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     init(chat: Chat) {
         self.chat = chat
-        chat.fetch()
+//        chat.fetch()
         self.messages = chat.valueForKey("messages") as! [Message]
         super.init(nibName: nil, bundle: nil)
         title = chat.you?.valueForKey("username") as? String
@@ -253,7 +253,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         textView.resignFirstResponder()
         textView.becomeFirstResponder()
         
-        chat.messages.append(Message(me: chat.me!, you: chat.you!, text: textView.text, sentDate: NSDate()))
+ //       chat.messages.append(Message(me: chat.me!, you: chat.you!, text: textView.text, sentDate: NSDate()))
         chat.saveInBackgroundWithBlock(nil)
         textView.text = nil
         updateTextViewHeight()

@@ -1,4 +1,5 @@
 import Foundation
+import Parse
 
 class Message: PFObject, PFSubclassing {
     @NSManaged var me: PFUser?
@@ -7,8 +8,8 @@ class Message: PFObject, PFSubclassing {
     @NSManaged var sentDate: NSDate?
     
     override class func initialize() {
-        var onceToken : dispatch_once_t = 0;
-        dispatch_once(&onceToken) {
+        var onceToken2 : dispatch_once_t = 0;
+        dispatch_once(&onceToken2) {
             self.registerSubclass()
         }
     }
@@ -21,6 +22,7 @@ class Message: PFObject, PFSubclassing {
         super.init()
         self.me = me
         self.you = you
+        self.text = text
         self.sentDate = sentDate
     }
     
