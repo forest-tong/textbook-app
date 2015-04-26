@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E063DAC1AEC97E500E624F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E063DAB1AEC97E500E624F9 /* SearchViewController.swift */; };
 		2E7292FB1AEC542200546E21 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7292FA1AEC542200546E21 /* InterfaceController.swift */; };
 		2E7292FD1AEC542200546E21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E7292FC1AEC542200546E21 /* Images.xcassets */; };
 		2E7293011AEC542200546E21 /* TextbookApp WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */; };
@@ -113,6 +114,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E063DAB1AEC97E500E624F9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textbooksTableViewController.swift; sourceTree = "<group>"; };
 		2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBookCourseListTableViewController.swift; sourceTree = "<group>"; };
 		2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TextbookApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,6 +341,7 @@
 				D1A8EB061AEC347900732D29 /* Textbook.swift */,
 				D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */,
 				B960984F1AEBC558007D6DC1 /* Main.storyboard */,
+				2E063DAB1AEC97E500E624F9 /* SearchViewController.swift */,
 				B96098521AEBC558007D6DC1 /* Images.xcassets */,
 				2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */,
 				2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */,
@@ -585,6 +588,7 @@
 				D1A8EB081AEC347900732D29 /* MyBooksViewController.swift in Sources */,
 				D1A8EB0A1AEC347900732D29 /* TextbookCreatorViewController.swift in Sources */,
 				B96098B21AEBE38D007D6DC1 /* Chat.swift in Sources */,
+				2E063DAC1AEC97E500E624F9 /* SearchViewController.swift in Sources */,
 				B96098BF1AEBE38D007D6DC1 /* PlaceholderTextView.swift in Sources */,
 				B960984C1AEBC558007D6DC1 /* AppDelegate.swift in Sources */,
 				B96098C11AEBE38D007D6DC1 /* UserCell.swift in Sources */,
