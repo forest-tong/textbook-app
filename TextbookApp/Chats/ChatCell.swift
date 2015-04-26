@@ -71,7 +71,11 @@ class ChatCell: UITableViewCell {
 
     func configureWithChat(chat: Chat) {
         chat.fetchInBackgroundWithBlock({finished, error in
-            let user = chat.valueForKey("you") as! PFUser
+            var user = chat.valueForKey("you") as! PFUser
+            if user == PFUser.currentUser() {
+                user = chat.valueForKey("me") as! PFUser
+
+            }
             user.fetchInBackgroundWithBlock({finished, error in
                 self.userPictureImageView.image = UIImage(named: "User0")
                 self.userNameLabel.text = user.valueForKey("username") as? String
