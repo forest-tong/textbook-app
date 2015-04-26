@@ -56,6 +56,9 @@ class ChatsViewController: UITableViewController {
 //            }
 //        }
         let query = Chat.query()!
+        query.includeKey("you")
+        query.includeKey("me")
+        query.includeKey("messages")
         query.whereKey("me", equalTo: PFUser.currentUser()!)
         query.findObjectsInBackgroundWithBlock { objects, error -> Void in
             if let myChats = objects as? [Chat] {
