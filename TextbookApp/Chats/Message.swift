@@ -3,7 +3,7 @@ import Foundation
 class Message: PFObject, PFSubclassing {
     var incoming: Bool?
     @NSManaged var text: String?
-    var sentDate: NSDate?
+    @NSManaged var sentDate: NSDate?
     
     override class func initialize() {
         var onceToken : dispatch_once_t = 0;
@@ -14,8 +14,6 @@ class Message: PFObject, PFSubclassing {
     
     override init() {
         super.init()
-        self.incoming = nil
-        self.sentDate = nil
     }
 
     init(incoming: Bool, text: String, sentDate: NSDate) {

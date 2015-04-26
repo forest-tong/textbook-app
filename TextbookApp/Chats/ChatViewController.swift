@@ -11,68 +11,69 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var textView: UITextView!
     var sendButton: UIButton!
     var rotating = false
-
+    var messages: [[PFObject]]?
+    
     override var inputAccessoryView: UIView! {
-    get {
-        if toolBar == nil {
-            toolBar = UIToolbar(frame: CGRectMake(0, 0, 0, toolBarMinHeight-0.5))
-
-            textView = InputTextView(frame: CGRectZero)
-            textView.backgroundColor = UIColor(white: 250/255, alpha: 1)
-            textView.delegate = self
-            textView.font = UIFont.systemFontOfSize(messageFontSize)
-            textView.layer.borderColor = UIColor(red: 200/255, green: 200/255, blue: 205/255, alpha:1).CGColor
-            textView.layer.borderWidth = 0.5
-            textView.layer.cornerRadius = 5
-//        textView.placeholder = "Message"
-            textView.scrollsToTop = false
-            textView.textContainerInset = UIEdgeInsetsMake(4, 3, 3, 3)
-            toolBar.addSubview(textView)
-
-            sendButton = UIButton.buttonWithType(.System) as! UIButton
-            sendButton.enabled = false
-            sendButton.titleLabel?.font = UIFont.boldSystemFontOfSize(17)
-            sendButton.setTitle("Send", forState: .Normal)
-            sendButton.setTitleColor(UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1), forState: .Disabled)
-            sendButton.setTitleColor(UIColor(red: 1/255, green: 122/255, blue: 255/255, alpha: 1), forState: .Normal)
-            sendButton.contentEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
-            sendButton.addTarget(self, action: "sendAction", forControlEvents: UIControlEvents.TouchUpInside)
-            toolBar.addSubview(sendButton)
-
-            // Auto Layout allows `sendButton` to change width, e.g., for localization.
-            textView.setTranslatesAutoresizingMaskIntoConstraints(false)
-            sendButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-            toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Left, relatedBy: .Equal, toItem: toolBar, attribute: .Left, multiplier: 1, constant: 8))
-            toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Top, relatedBy: .Equal, toItem: toolBar, attribute: .Top, multiplier: 1, constant: 7.5))
-            toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Right, relatedBy: .Equal, toItem: sendButton, attribute: .Left, multiplier: 1, constant: -2))
-            toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Bottom, relatedBy: .Equal, toItem: toolBar, attribute: .Bottom, multiplier: 1, constant: -8))
-            toolBar.addConstraint(NSLayoutConstraint(item: sendButton, attribute: .Right, relatedBy: .Equal, toItem: toolBar, attribute: .Right, multiplier: 1, constant: 0))
-            toolBar.addConstraint(NSLayoutConstraint(item: sendButton, attribute: .Bottom, relatedBy: .Equal, toItem: toolBar, attribute: .Bottom, multiplier: 1, constant: -4.5))
+        get {
+            if toolBar == nil {
+                toolBar = UIToolbar(frame: CGRectMake(0, 0, 0, toolBarMinHeight-0.5))
+                
+                textView = InputTextView(frame: CGRectZero)
+                textView.backgroundColor = UIColor(white: 250/255, alpha: 1)
+                textView.delegate = self
+                textView.font = UIFont.systemFontOfSize(messageFontSize)
+                textView.layer.borderColor = UIColor(red: 200/255, green: 200/255, blue: 205/255, alpha:1).CGColor
+                textView.layer.borderWidth = 0.5
+                textView.layer.cornerRadius = 5
+                //        textView.placeholder = "Message"
+                textView.scrollsToTop = false
+                textView.textContainerInset = UIEdgeInsetsMake(4, 3, 3, 3)
+                toolBar.addSubview(textView)
+                
+                sendButton = UIButton.buttonWithType(.System) as! UIButton
+                sendButton.enabled = false
+                sendButton.titleLabel?.font = UIFont.boldSystemFontOfSize(17)
+                sendButton.setTitle("Send", forState: .Normal)
+                sendButton.setTitleColor(UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1), forState: .Disabled)
+                sendButton.setTitleColor(UIColor(red: 1/255, green: 122/255, blue: 255/255, alpha: 1), forState: .Normal)
+                sendButton.contentEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+                sendButton.addTarget(self, action: "sendAction", forControlEvents: UIControlEvents.TouchUpInside)
+                toolBar.addSubview(sendButton)
+                
+                // Auto Layout allows `sendButton` to change width, e.g., for localization.
+                textView.setTranslatesAutoresizingMaskIntoConstraints(false)
+                sendButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+                toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Left, relatedBy: .Equal, toItem: toolBar, attribute: .Left, multiplier: 1, constant: 8))
+                toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Top, relatedBy: .Equal, toItem: toolBar, attribute: .Top, multiplier: 1, constant: 7.5))
+                toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Right, relatedBy: .Equal, toItem: sendButton, attribute: .Left, multiplier: 1, constant: -2))
+                toolBar.addConstraint(NSLayoutConstraint(item: textView, attribute: .Bottom, relatedBy: .Equal, toItem: toolBar, attribute: .Bottom, multiplier: 1, constant: -8))
+                toolBar.addConstraint(NSLayoutConstraint(item: sendButton, attribute: .Right, relatedBy: .Equal, toItem: toolBar, attribute: .Right, multiplier: 1, constant: 0))
+                toolBar.addConstraint(NSLayoutConstraint(item: sendButton, attribute: .Bottom, relatedBy: .Equal, toItem: toolBar, attribute: .Bottom, multiplier: 1, constant: -4.5))
+            }
+            return toolBar
         }
-        return toolBar
     }
-    }
-
+    
     init(chat: Chat) {
         self.chat = chat
         super.init(nibName: nil, bundle: nil)
         title = chat.you?.valueForKey("username") as? String
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let whiteColor = UIColor.whiteColor()
         view.backgroundColor = whiteColor // smooths push animation
-
+        
         tableView = UITableView(frame: view.bounds, style: .Plain)
         tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         tableView.backgroundColor = whiteColor
@@ -85,33 +86,33 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.separatorStyle = .None
         tableView.registerClass(MessageSentDateCell.self, forCellReuseIdentifier: NSStringFromClass(MessageSentDateCell))
         view.addSubview(tableView)
-
+        
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: "menuControllerWillHide:", name: UIMenuControllerWillHideMenuNotification, object: nil) // #CopyMessage
-
+        
         // tableViewScrollToBottomAnimated(false) // doesn't work
     }
-
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
+    
     override func viewDidAppear(animated: Bool)  {
         super.viewDidAppear(animated)
         tableView.flashScrollIndicators()
     }
-
+    
     override func viewWillDisappear(animated: Bool)  {
         super.viewWillDisappear(animated)
         chat.draft = textView.text
     }
-
+    
     // This gets called a lot. Perhaps there's a better way to know when `view.window` has been set?
     override func viewDidLayoutSubviews()  {
         super.viewDidLayoutSubviews()
-
+        
         if !chat.draft.isEmpty {
             textView.text = chat.draft
             chat.draft = ""
@@ -119,11 +120,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             textView.becomeFirstResponder()
         }
     }
-
-//    // #iOS7.1
+    
+    //    // #iOS7.1
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         super.willAnimateRotationToInterfaceOrientation(toInterfaceOrientation, duration: duration)
-
+        
         if UIInterfaceOrientationIsLandscape(toInterfaceOrientation) {
             if toolBar.frame.height > textViewMaxHeight.landscape {
                 toolBar.frame.size.height = textViewMaxHeight.landscape+8*2-0.5
@@ -132,33 +133,54 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             updateTextViewHeight()
         }
     }
-//    // #iOS8
-//    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
-//        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-//    }
-
+    //    // #iOS8
+    //    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+    //        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    //    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return chat.messages.count
+        if let messages = self.messages {
+            return messages.count
+        } else {
+            chat.fetch()
+            self.messages = chat.valueForKey("messages") as! [[PFObject]]
+            return self.messages!.count
+        }
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chat.messages[section].count + 1 // for sent-date cell
+        if let messages = messages {
+            return messages.count
+        } else {
+            chat.fetch()
+            self.messages = chat.valueForKey("messages") as! [[PFObject]]
+            return self.messages![section].count + 1
+        }
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(MessageSentDateCell), forIndexPath: indexPath) as! MessageSentDateCell
-            let message = chat.messages[indexPath.section][0]
+            var message: PFObject!
+            if let messages = self.messages {
+                message = messages[indexPath.section][0]
+            } else {
+                chat.fetch()
+                self.messages = chat.valueForKey("messages") as! [[PFObject]]
+                message = self.messages![indexPath.section][0]
+            }
             dateFormatter.dateStyle = .ShortStyle
             dateFormatter.timeStyle = .ShortStyle
-            cell.sentDateLabel.text = dateFormatter.stringFromDate(message.sentDate!)
+//            message.fetchInBackgroundWithBlock{(object: PFObject?, error: NSError?) -> Void in
+//                cell.sentDateLabel.text = dateFormatter.stringFromDate(message.valueForKey("sentDate"))
+//            }
             return cell
         } else {
             let cellIdentifier = NSStringFromClass(MessageBubbleCell)
             var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MessageBubbleCell!
             if cell == nil {
                 cell = MessageBubbleCell(style: .Default, reuseIdentifier: cellIdentifier)
-
+                
                 // Add gesture recognizers #CopyMessage
                 let action: Selector = "messageShowMenuAction:"
                 let doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: action)
@@ -166,22 +188,34 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.bubbleImageView.addGestureRecognizer(doubleTapGestureRecognizer)
                 cell.bubbleImageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: action))
             }
-            let message = chat.messages[indexPath.section][indexPath.row-1]
-            cell.configureWithMessage(message)
+            var message: PFObject!
+            if let messages = self.messages {
+                message = messages[indexPath.section][indexPath.row - 1]
+            } else {
+                chat.fetch()
+                self.messages = chat.valueForKey("messages") as! [[PFObject]]
+                message = self.messages![indexPath.section][indexPath.row - 1]
+            }
+            message.fetch()
+            println(message)
+            let text = message.valueForKey("text") as! String
+//            let date = message.valueForKey("sentDate") as! NSDate
+            let actualMessage = Message(incoming: false, text: text, sentDate: NSDate())
+            cell.configureWithMessage(actualMessage)
             return cell
         }
     }
-
+    
     // Reserve row selection #CopyMessage
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         return nil
     }
-
+    
     func textViewDidChange(textView: UITextView) {
         updateTextViewHeight()
         sendButton.enabled = textView.hasText()
     }
-
+    
     func keyboardWillShow(notification: NSNotification) {
         let userInfo = notification.userInfo as NSDictionary!
         let frameNew = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
@@ -189,7 +223,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let insetOld = tableView.contentInset
         let insetChange = insetNewBottom - insetOld.bottom
         let overflow = tableView.contentSize.height - (tableView.frame.height-insetOld.top-insetOld.bottom)
-
+        
         let duration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         let animations: (() -> Void) = {
             if !(self.tableView.tracking || self.tableView.decelerating) {
@@ -211,12 +245,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             animations()
         }
     }
-
+    
     func keyboardDidShow(notification: NSNotification) {
         let userInfo = notification.userInfo as NSDictionary!
         let frameNew = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         let insetNewBottom = tableView.convertRect(frameNew, fromView: nil).height
-
+        
         // Inset `tableView` with keyboard
         let contentOffsetY = tableView.contentOffset.y
         tableView.contentInset.bottom = insetNewBottom
@@ -226,32 +260,32 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tableView.contentOffset.y = contentOffsetY
         }
     }
-
+    
     func updateTextViewHeight() {
         let oldHeight = textView.frame.height
         let maxHeight = UIInterfaceOrientationIsPortrait(interfaceOrientation) ? textViewMaxHeight.portrait : textViewMaxHeight.landscape
         var newHeight = min(textView.sizeThatFits(CGSize(width: textView.frame.width, height: CGFloat.max)).height, maxHeight)
         #if arch(x86_64) || arch(arm64)
             newHeight = ceil(newHeight)
-        #else
+            #else
             newHeight = CGFloat(ceilf(newHeight.native))
         #endif
         if newHeight != oldHeight {
             toolBar.frame.size.height = newHeight+8*2-0.5
         }
     }
-
+    
     func sendAction() {
         // Autocomplete text before sending #hack
         textView.resignFirstResponder()
         textView.becomeFirstResponder()
-
+        
         chat.messages.append([Message(incoming: false, text: textView.text, sentDate: NSDate())])
         chat.saveInBackgroundWithBlock(nil)
         textView.text = nil
         updateTextViewHeight()
         sendButton.enabled = false
-
+        
         let lastSection = tableView.numberOfSections()
         tableView.beginUpdates()
         tableView.insertSections(NSIndexSet(index: lastSection), withRowAnimation: .Automatic)
@@ -262,14 +296,14 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.endUpdates()
         tableViewScrollToBottomAnimated(true)
     }
-
+    
     func tableViewScrollToBottomAnimated(animated: Bool) {
         let numberOfRows = tableView.numberOfRowsInSection(0)
         if numberOfRows > 0 {
             tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: numberOfRows-1, inSection: 0), atScrollPosition: .Bottom, animated: animated)
         }
     }
-
+    
     // Handle actions #CopyMessage
     // 1. Select row and show "Copy" menu
     func messageShowMenuAction(gestureRecognizer: UITapGestureRecognizer) {
@@ -279,7 +313,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if doubleTap || longPress {
             let pressedIndexPath = tableView.indexPathForRowAtPoint(gestureRecognizer.locationInView(tableView))!
             tableView.selectRowAtIndexPath(pressedIndexPath, animated: false, scrollPosition: .None)
-
+            
             let menuController = UIMenuController.sharedMenuController()
             let bubbleImageView = gestureRecognizer.view!
             menuController.setTargetRect(bubbleImageView.frame, inView: bubbleImageView.superview!)
@@ -311,7 +345,7 @@ class InputTextView: UITextView {
             return super.canPerformAction(action, withSender: sender)
         }
     }
-
+    
     // More specific than implementing `nextResponder` to return `delegate`, which might cause side effects?
     func messageCopyTextAction(menuController: UIMenuController) {
         (delegate as! ChatViewController).messageCopyTextAction(menuController)

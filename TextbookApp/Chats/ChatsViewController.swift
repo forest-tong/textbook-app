@@ -43,31 +43,19 @@ class ChatsViewController: UITableViewController {
 //        tableView.reloadData()
     }
     
-    func fetchChats() {
-//        let buyerQuery = PFQuery(className: "Chat")
-//        buyerQuery.whereKey("buyer", equalTo: PFUser.currentUser()!)
-//        let sellerQuery = PFQuery(className: "Chat")
-//        sellerQuery.whereKey("seller", equalTo: PFUser.currentUser()!)
-//        let query = PFQuery.orQueryWithSubqueries([buyerQuery, sellerQuery])
-//        query.orderByDescending("updatedAt")
-//        buyerQuery.findObjectsInBackgroundWithBlock { objects, error -> Void in
-//            if let chats = objects as? [Chat] {
-//                account.chats = chats
+//    func fetchChats() {
+//        let query = Chat.query()!
+//        query.includeKey("you")
+//        query.includeKey("me")
+//        query.includeKey("messages")
+//        query.whereKey("me", equalTo: PFUser.currentUser()!)
+//        query.findObjectsInBackgroundWithBlock { objects, error -> Void in
+//            if let myChats = objects as? [Chat] {
+//                self.chats = myChats
 //                self.tableView.reloadData()
 //            }
 //        }
-        let query = Chat.query()!
-        query.includeKey("you")
-        query.includeKey("me")
-        query.includeKey("messages")
-        query.whereKey("me", equalTo: PFUser.currentUser()!)
-        query.findObjectsInBackgroundWithBlock { objects, error -> Void in
-            if let myChats = objects as? [Chat] {
-                self.chats = myChats
-                self.tableView.reloadData()
-            }
-        }
-    }
+//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chats.count
