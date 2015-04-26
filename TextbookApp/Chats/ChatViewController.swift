@@ -253,7 +253,10 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         textView.resignFirstResponder()
         textView.becomeFirstResponder()
         
- //       chat.messages.append(Message(me: chat.me!, you: chat.you!, text: textView.text, sentDate: NSDate()))
+        let message = Message(me: chat.me!, you: chat.you!, text: textView.text, sentDate: NSDate())
+        message.save()
+        chat.messages.append(message)
+        println(chat.messages)
         chat.saveInBackgroundWithBlock(nil)
         textView.text = nil
         updateTextViewHeight()
@@ -263,8 +266,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.beginUpdates()
         tableView.insertSections(NSIndexSet(index: lastSection), withRowAnimation: .Automatic)
         tableView.insertRowsAtIndexPaths([
-            NSIndexPath(forRow: 0, inSection: lastSection),
-            NSIndexPath(forRow: 1, inSection: lastSection)
+            NSIndexPath(forRow: 0, inSection: lastSection)
+//            ,NSIndexPath(forRow: 1, inSection: lastSection)
             ], withRowAnimation: .Automatic)
         tableView.endUpdates()
         tableViewScrollToBottomAnimated(true)

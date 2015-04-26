@@ -47,11 +47,14 @@ class ChatsViewController: UITableViewController {
     
     func fetchChats() {
         let query = Chat.query()!
-        query.includeKey("you")
-        query.includeKey("me")
-        query.includeKey("messages")
         query.whereKey("me", equalTo: PFUser.currentUser()!)
-        query.findObjectsInBackgroundWithBlock { objects, error -> Void in
+        let query2 = Chat.query()!
+        query2.whereKey("you", equalTo: PFUser.currentUser()!)
+        let query3 = PFQuery.orQueryWithSubqueries([query, query2])
+        query3.includeKey("you")
+        query3.includeKey("me")
+        query3.includeKey("messages")
+        query3.findObjectsInBackgroundWithBlock { objects, error -> Void in
             if let myChats = objects as? [Chat] {
                 self.chats = myChats
                 self.tableView.reloadData()
