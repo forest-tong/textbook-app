@@ -98,26 +98,31 @@ class MyBooksViewController: UITableViewController {
                     }
                     obj.setValue(goodArray, forKey: "textbooks")
                     obj.saveInBackgroundWithBlock(nil)
+                    
+                    
+                    var badBooks = PFUser.currentUser()!.valueForKey("textbooks") as! [PFObject]
+                    var goodBooks = [PFObject]()
+                    for book in badBooks {
+                        if book != self.books[indexPath.row] {
+                            goodBooks.append(book)
+                        }
+                    }
+                    PFUser.currentUser()!.setValue(goodBooks, forKey: "textbooks")
+                    PFUser.currentUser()!.saveInBackgroundWithBlock(nil)
+                    
+                    
+                    
+                    let deletedBook = self.books.removeAtIndex(indexPath.row)
+                    
+                    deletedBook.deleteInBackgroundWithBlock(nil)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    })
                 }
             }
             
-            var badBooks = PFUser.currentUser()!.valueForKey("textbooks") as! [PFObject]
-            var goodBooks = [PFObject]()
-            for book in badBooks {
-                if book != self.books[indexPath.row] {
-                    goodBooks.append(book)
-                }
-            }
-            PFUser.currentUser()!.setValue(goodBooks, forKey: "textbooks")
-            PFUser.currentUser()!.saveInBackgroundWithBlock(nil)
-
-
             
-            let deletedBook = books.removeAtIndex(indexPath.row)
-            
-            deletedBook.deleteInBackgroundWithBlock(nil)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

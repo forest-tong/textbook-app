@@ -66,6 +66,8 @@
 		D165EA631AEC5C1000C8E305 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5D1AEC5C1000C8E305 /* ParseFacebookUtils.framework */; };
 		D165EA641AEC5C1000C8E305 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5E1AEC5C1000C8E305 /* ParseFacebookUtilsV4.framework */; };
 		D165EA651AEC5C1000C8E305 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5F1AEC5C1000C8E305 /* ParseUI.framework */; };
+		D18F90A01AECBBC1005F89DF /* LogoTextbook.png in Resources */ = {isa = PBXBuildFile; fileRef = D18F909E1AECBBC1005F89DF /* LogoTextbook.png */; };
+		D18F90A11AECBBC1005F89DF /* LOGOtextbook.svg in Resources */ = {isa = PBXBuildFile; fileRef = D18F909F1AECBBC1005F89DF /* LOGOtextbook.svg */; };
 		D1A8EB081AEC347900732D29 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8EB051AEC347900732D29 /* MyBooksViewController.swift */; };
 		D1A8EB091AEC347900732D29 /* Textbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8EB061AEC347900732D29 /* Textbook.swift */; };
 		D1A8EB0A1AEC347900732D29 /* TextbookCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */; };
@@ -171,6 +173,8 @@
 		D165EA5D1AEC5C1000C8E305 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		D165EA5E1AEC5C1000C8E305 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		D165EA5F1AEC5C1000C8E305 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Downloads/parse-library-1.7.1/ParseUI.framework"; sourceTree = "<group>"; };
+		D18F909E1AECBBC1005F89DF /* LogoTextbook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoTextbook.png; sourceTree = "<group>"; };
+		D18F909F1AECBBC1005F89DF /* LOGOtextbook.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LOGOtextbook.svg; sourceTree = "<group>"; };
 		D1A8EB051AEC347900732D29 /* MyBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		D1A8EB061AEC347900732D29 /* Textbook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textbook.swift; sourceTree = "<group>"; };
 		D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextbookCreatorViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 		B960983D1AEBC558007D6DC1 = {
 			isa = PBXGroup;
 			children = (
+				D18F909E1AECBBC1005F89DF /* LogoTextbook.png */,
+				D18F909F1AECBBC1005F89DF /* LOGOtextbook.svg */,
 				2E7292F71AEC542200546E21 /* TextbookApp WatchKit Extension */,
 				2E7293041AEC542200546E21 /* TextbookApp WatchKit App */,
 				2EE86FD91AEBC95A004CF838 /* Frameworks */,
@@ -550,6 +556,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18F90A11AECBBC1005F89DF /* LOGOtextbook.svg in Resources */,
+				D18F90A01AECBBC1005F89DF /* LogoTextbook.png in Resources */,
 				B96098511AEBC558007D6DC1 /* Main.storyboard in Resources */,
 				B96098B71AEBE38D007D6DC1 /* Images.xcassets in Resources */,
 				B96098531AEBC558007D6DC1 /* Images.xcassets in Resources */,

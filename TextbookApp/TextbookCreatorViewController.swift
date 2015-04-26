@@ -42,6 +42,7 @@ class TextbookCreatorViewController: UITableViewController {
         book.price = (priceTextField.text as NSString).doubleValue
         book.condition = conditionTextField.text
         book.notes = notesTextView.text
+        book.course = course["name"] as! String
         
         if (course["textbooks"] == nil) {
             course["textbooks"] = [book]

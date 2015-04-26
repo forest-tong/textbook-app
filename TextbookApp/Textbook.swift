@@ -17,6 +17,7 @@ class Textbook: PFObject, PFSubclassing {
     @NSManaged var notes: String
     @NSManaged var name: String
     @NSManaged var owner: PFUser
+    @NSManaged var course: String
     
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
