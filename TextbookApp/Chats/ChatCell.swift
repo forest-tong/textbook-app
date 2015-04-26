@@ -72,8 +72,13 @@ class ChatCell: UITableViewCell {
     func configureWithChat(chat: Chat) {
         let user = chat.you
         userPictureImageView.image = UIImage(named: "User0")
+        println(user)
         userNameLabel.text = user?.valueForKey("username") as? String
-        lastMessageTextLabel.text = chat.lastMessageText
+        if chat.messages.count > 0 {
+            let lastMessageGroup: [Message] = chat.messages[chat.messages.count - 1]
+            let lastMessage: Message = lastMessageGroup[lastMessageGroup.count - 1]
+            lastMessageTextLabel.text = lastMessage.text
+        }
         lastMessageSentDateLabel.text = chat.lastMessageSentDateString
     }
 }

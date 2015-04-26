@@ -1,18 +1,23 @@
 //
-//  textbooksTableViewController.swift
+//  DetailsTableViewController.swift
 //  TextbookApp
 //
-//  Created by Kevin Gerami on 4/25/15.
+//  Created by Kevin Gerami on 4/26/15.
 //  Copyright (c) 2015 Forest Tong. All rights reserved.
 //
 
 import UIKit
 
-class textbooksTableViewController: UITableViewController {
-    var courseObject: PFObject!
-    var numOfBooks: Int!
-    var textbooks =  [PFObject]()
-
+class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+    var textbook: PFObject!
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var editionTF: UITextField!
+    @IBOutlet weak var priceTF: UITextField!
+    @IBOutlet weak var conditionTF: UITextField!
+    @IBOutlet weak var notesTV: UITextView!
+    @IBAction func contactButtonTap(sender: AnyObject) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +29,26 @@ class textbooksTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        textbooks = courseObject.valueForKey("textbooks") as! [PFObject]
-        numOfBooks = textbooks.count
+        super.viewWillAppear(animated)
+        nameTF.delegate = self
+        editionTF.delegate = self
+        priceTF.delegate = self
+        conditionTF.delegate = self
+        notesTV.delegate = self
+        
+        nameTF.text = textbook.valueForKey("name") as! String
+        editionTF.text = textbook.valueForKey("edition") as! String
+        priceTF.text = textbook.valueForKey("price") as! String
+        conditionTF.text = textbook.valueForKey("condition") as! String
+        notesTV.text = textbook.valueForKey("notes") as! String
+    }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        return false
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        return false
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,23 +61,24 @@ class textbooksTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return numOfBooks
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("textbookCell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = textbooks[indexPath.row].valueForKey("name") as? String
-        cell.detailTextLabel?.text = textbooks[indexPath.row].valueForKey("price") as? String
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+
+        // Configure the cell...
+
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,15 +115,14 @@ class textbooksTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "detailsSegue" {
-            let detailVC = segue.destinationViewController as! DetailsTableViewController
-            detailVC.textbook = textbooks[tableView.indexPathForSelectedRow()!.row]
-        }
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }
