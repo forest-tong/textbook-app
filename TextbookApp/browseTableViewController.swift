@@ -27,6 +27,7 @@ class browseTableViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "Course")
         query.whereKey("school", equalTo: location)
+        query.whereKeyExists("textbooks")
         query.orderByAscending("courseID")
         return query
     }

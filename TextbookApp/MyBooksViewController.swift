@@ -77,7 +77,39 @@ class MyBooksViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            let courseName = books[indexPath.row].valueForKey("course") as! String
+            var query = PFQuery(className: "Course")
+            query.whereKey("name", equalTo: courseName)
+            query.includeKey("textbooks")
+            query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                if error == nil {
+                   let obj = objects!.first as! PFObject
+                    var badArray = obj.valueForKey("textbooks") as! [PFObject]!
+                    var goodArray = [PFObject]()
+                    for book in badArray {
+                        if book != self.books[indexPath.row] {
+                            goodArray.append(book)
+                        }
+                    }
+                    obj.setValue(goodArray, forKey: "textbooks")
+                    obj.saveInBackgroundWithBlock(nil)
+                }
+            }
+            
+            var badBooks = PFUser.currentUser()!.valueForKey("textbooks") as! [PFObject]
+            var goodBooks = [PFObject]()
+            for book in badBooks {
+                if book != self.books[indexPath.row] {
+                    goodBooks.append(book)
+                }
+            }
+            PFUser.currentUser()!.setValue(goodBooks, forKey: "textbooks")
+            PFUser.currentUser()!.saveInBackgroundWithBlock(nil)
+
+
+            
             let deletedBook = books.removeAtIndex(indexPath.row)
+            
             deletedBook.deleteInBackgroundWithBlock(nil)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -110,8 +142,10 @@ class MyBooksViewController: UITableViewController {
     func fetchBooks() {
         let user = PFUser.currentUser()!
         user.fetchIfNeeded()
+        if user["textbooks"] != nil {
         self.books = user["textbooks"] as! [Textbook]
         self.tableView.reloadData()
+        }
         /*
         let booksForSaleRelation = user.relationForKey("textbooks")
         let query = booksForSaleRelation.query()!
