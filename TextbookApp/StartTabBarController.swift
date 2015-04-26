@@ -27,7 +27,6 @@ class StartTabBarController: UITabBarController, PFLogInViewControllerDelegate, 
             presentLoginViewController()
         }
         
-        PFUser.currentUser()!["textbooks"] = makeBooks()
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
