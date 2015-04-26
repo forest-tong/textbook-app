@@ -50,7 +50,7 @@ class TextbookCreatorViewController: UITableViewController {
             courseTextbooks.append(book)
             course["textbooks"] = courseTextbooks
         }
-        course.save()
+        course.saveInBackgroundWithBlock(nil)
             
         let user = PFUser.currentUser()!
         if (user["textbooks"] == nil) {

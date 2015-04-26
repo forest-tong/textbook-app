@@ -15,6 +15,7 @@ class textbooksTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        textbooks = courseObject.valueForKey("textbooks") as! [PFObject]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,8 +25,13 @@ class textbooksTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        textbooks = courseObject.valueForKey("textbooks") as! [PFObject]
-        numOfBooks = textbooks.count
+        super.viewWillAppear(animated)
+        for i in textbooks {
+            i.fetch()
+        }
+            textbooks = courseObject.valueForKey("textbooks") as! [PFObject]
+            numOfBooks = textbooks.count
+        
     }
 
     override func didReceiveMemoryWarning() {

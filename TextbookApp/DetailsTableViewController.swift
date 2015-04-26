@@ -39,8 +39,8 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UI
         notesTV.delegate = self
         
         nameTF.text = textbook.valueForKey("name") as! String
-        editionTF.text = textbook.valueForKey("edition") as! String
-        priceTF.text = textbook.valueForKey("price") as! String
+        editionTF.text = String(stringInterpolationSegment: textbook.valueForKey("edition")!)
+        priceTF.text = String(stringInterpolationSegment: textbook.valueForKey("price")!)
         conditionTF.text = textbook.valueForKey("condition") as! String
         notesTV.text = textbook.valueForKey("notes") as! String
     }
@@ -60,17 +60,6 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UI
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
