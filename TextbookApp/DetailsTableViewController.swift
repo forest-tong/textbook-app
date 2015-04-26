@@ -17,6 +17,8 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UI
     @IBOutlet weak var notesTV: UITextView!
     @IBAction func contactButtonTap(sender: AnyObject) {
         
+        // comment so Daniel can get this!!!
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

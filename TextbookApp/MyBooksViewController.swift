@@ -26,6 +26,10 @@ class MyBooksViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        fetchBooks()
+    }
+    
     @IBAction func didPressAddButton(sender: AnyObject) {
         performSegueWithIdentifier("toCourseViewSegue", sender: self)
     }
