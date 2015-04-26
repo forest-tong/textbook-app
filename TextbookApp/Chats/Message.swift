@@ -1,7 +1,8 @@
 import Foundation
 
 class Message: PFObject, PFSubclassing {
-    var incoming: Bool?
+    @NSManaged var me: PFUser?
+    @NSManaged var you: PFUser?
     @NSManaged var text: String?
     @NSManaged var sentDate: NSDate?
     
@@ -16,10 +17,10 @@ class Message: PFObject, PFSubclassing {
         super.init()
     }
 
-    init(incoming: Bool, text: String, sentDate: NSDate) {
+    init(me: PFUser, you: PFUser, text: String, sentDate: NSDate) {
         super.init()
-        self.incoming = incoming
-        self.text = text
+        self.me = me
+        self.you = you
         self.sentDate = sentDate
     }
     

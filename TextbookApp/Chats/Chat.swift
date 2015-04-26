@@ -7,9 +7,7 @@ class Chat: PFObject, PFSubclassing {
     @NSManaged var me: PFUser?
     @NSManaged var you: PFUser?
     @NSManaged var lastMessageSentDate: NSDate?
-    @NSManaged var messages: [[Message]]
-    var unreadMessageCount: Int = 0 // subtacted from total when read
-    var hasUnloadedMessages = false
+    @NSManaged var messages: [Message]
     var draft = ""
     
     override class func initialize() {

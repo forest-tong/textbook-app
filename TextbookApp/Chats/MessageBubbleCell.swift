@@ -43,11 +43,12 @@ class MessageBubbleCell: UITableViewCell {
     func configureWithMessage(message: Message) {
         messageLabel.text = message.text
 
-        if message.incoming != (tag == incomingTag) {
+        let incoming = (PFUser.currentUser() == message.me)
+        if incoming != (tag == incomingTag) {
             var layoutAttribute: NSLayoutAttribute
             var layoutConstant: CGFloat
 
-            if message.incoming! {
+            if incoming {
                 tag = incomingTag
                 bubbleImageView.image = bubbleImage.incoming
                 bubbleImageView.highlightedImage = bubbleImage.incomingHighlighed

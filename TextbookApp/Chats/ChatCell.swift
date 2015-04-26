@@ -75,13 +75,10 @@ class ChatCell: UITableViewCell {
             user.fetchInBackgroundWithBlock({finished, error in
                 self.userPictureImageView.image = UIImage(named: "User0")
                 self.userNameLabel.text = user.valueForKey("username") as? String
-                let messageList = chat.valueForKey("messages") as! [[PFObject]]
+                let messageList = chat.valueForKey("messages") as! [Message]
                 if messageList.count > 0 {
-                    var messageGroup = messageList[messageList.count - 1]
-                    var message = messageGroup[messageGroup.count - 1]
-                    message.fetchInBackgroundWithBlock({finished, error in
-                        self.lastMessageTextLabel.text = message.valueForKey("text") as? String
-                    })
+                    var lastMessage = messageList[messageList.count - 1]
+                    self.lastMessageTextLabel.text = lastMessage.text
                 }
                 self.lastMessageSentDateLabel.text = chat.lastMessageSentDateString
             })

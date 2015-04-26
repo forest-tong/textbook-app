@@ -11,7 +11,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var textView: UITextView!
     var sendButton: UIButton!
     var rotating = false
-    var messages: [[PFObject]]?
+    var messages: [Message]
     
     override var inputAccessoryView: UIView! {
         get {
@@ -56,6 +56,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     init(chat: Chat) {
         self.chat = chat
+        chat.fetch()
+        self.messages = chat.valueForKey("messages") as! [Message]
         super.init(nibName: nil, bundle: nil)
         title = chat.you?.valueForKey("username") as? String
     }
@@ -139,41 +141,24 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let messages = self.messages {
-            return messages.count
-        } else {
-            chat.fetch()
-            self.messages = chat.valueForKey("messages") as! [[PFObject]]
-            return self.messages!.count
-        }
+        return messages.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let messages = messages {
+        if section == 0 {
             return messages.count
         } else {
-            chat.fetch()
-            self.messages = chat.valueForKey("messages") as! [[PFObject]]
-            return self.messages![section].count + 1
+            return 0
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(MessageSentDateCell), forIndexPath: indexPath) as! MessageSentDateCell
-            var message: PFObject!
-            if let messages = self.messages {
-                message = messages[indexPath.section][0]
-            } else {
-                chat.fetch()
-                self.messages = chat.valueForKey("messages") as! [[PFObject]]
-                message = self.messages![indexPath.section][0]
-            }
+            let message = messages[0]
             dateFormatter.dateStyle = .ShortStyle
             dateFormatter.timeStyle = .ShortStyle
-//            message.fetchInBackgroundWithBlock{(object: PFObject?, error: NSError?) -> Void in
-//                cell.sentDateLabel.text = dateFormatter.stringFromDate(message.valueForKey("sentDate"))
-//            }
+            cell.sentDateLabel.text = dateFormatter.stringFromDate(message.sentDate!)
             return cell
         } else {
             let cellIdentifier = NSStringFromClass(MessageBubbleCell)
@@ -188,20 +173,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.bubbleImageView.addGestureRecognizer(doubleTapGestureRecognizer)
                 cell.bubbleImageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: action))
             }
-            var message: PFObject!
-            if let messages = self.messages {
-                message = messages[indexPath.section][indexPath.row - 1]
-            } else {
-                chat.fetch()
-                self.messages = chat.valueForKey("messages") as! [[PFObject]]
-                message = self.messages![indexPath.section][indexPath.row - 1]
-            }
-            message.fetch()
-            println(message)
-            let text = message.valueForKey("text") as! String
-//            let date = message.valueForKey("sentDate") as! NSDate
-            let actualMessage = Message(incoming: false, text: text, sentDate: NSDate())
-            cell.configureWithMessage(actualMessage)
+            let message = messages[indexPath.row - 1]
+            cell.configureWithMessage(message)
             return cell
         }
     }
@@ -280,7 +253,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         textView.resignFirstResponder()
         textView.becomeFirstResponder()
         
-        chat.messages.append([Message(incoming: false, text: textView.text, sentDate: NSDate())])
+        chat.messages.append(Message(me: chat.me!, you: chat.you!, text: textView.text, sentDate: NSDate()))
         chat.saveInBackgroundWithBlock(nil)
         textView.text = nil
         updateTextViewHeight()
@@ -324,7 +297,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // 2. Copy text to pasteboard
     func messageCopyTextAction(menuController: UIMenuController) {
         let selectedIndexPath = tableView.indexPathForSelectedRow()
-        let selectedMessage = chat.messages[selectedIndexPath!.section][selectedIndexPath!.row-1]
+        let selectedMessage = chat.messages[selectedIndexPath!.row-1]
         UIPasteboard.generalPasteboard().string = selectedMessage.text
     }
     // 3. Deselect row
