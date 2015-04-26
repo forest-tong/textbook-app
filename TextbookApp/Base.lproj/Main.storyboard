@@ -90,6 +90,24 @@
             </objects>
             <point key="canvasLocation" x="2557" y="110"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GkH-x2-bsf">
+            <objects>
+                <viewController id="nBo-WX-8IQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wYa-2U-Dvh"/>
+                        <viewControllerLayoutGuide type="bottom" id="XeL-4M-gxl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Bc-Mr-wR7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHc-Nd-b7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="-481"/>
+        </scene>
         <!--List of Courses-->
         <scene sceneID="kmm-jT-FVO">
             <objects>

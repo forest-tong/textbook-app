@@ -12,7 +12,6 @@
 		2E7292FD1AEC542200546E21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E7292FC1AEC542200546E21 /* Images.xcassets */; };
 		2E7293011AEC542200546E21 /* TextbookApp WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */; };
 		2E7293091AEC542200546E21 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7293071AEC542200546E21 /* Interface.storyboard */; };
-		2E72930B1AEC542200546E21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E72930A1AEC542200546E21 /* Images.xcassets */; };
 		2E72930E1AEC542200546E21 /* TextbookApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2E7292F61AEC542200546E21 /* TextbookApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2E7293161AEC55DE00546E21 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD71AEBC93C004CF838 /* AudioToolbox.framework */; };
 		2E7293171AEC55E200546E21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD51AEBC936004CF838 /* Foundation.framework */; };
@@ -38,8 +37,6 @@
 		2EE86FD61AEBC936004CF838 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD51AEBC936004CF838 /* Foundation.framework */; };
 		2EE86FD81AEBC93C004CF838 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE86FD71AEBC93C004CF838 /* AudioToolbox.framework */; };
 		B960984C1AEBC558007D6DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960984B1AEBC558007D6DC1 /* AppDelegate.swift */; };
-		B96098511AEBC558007D6DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B960984F1AEBC558007D6DC1 /* Main.storyboard */; };
-		B96098531AEBC558007D6DC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96098521AEBC558007D6DC1 /* Images.xcassets */; };
 		B96098621AEBC558007D6DC1 /* TextbookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098611AEBC558007D6DC1 /* TextbookAppTests.swift */; };
 		B96098B21AEBE38D007D6DC1 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098A01AEBE38D007D6DC1 /* Chat.swift */; };
 		B96098B31AEBE38D007D6DC1 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098A11AEBE38D007D6DC1 /* ChatCell.swift */; };
@@ -57,6 +54,12 @@
 		B96AA8F21AEC7761001027F8 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8EC1AEC7761001027F8 /* ParseFacebookUtils.framework */; };
 		B96AA8F31AEC7761001027F8 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8ED1AEC7761001027F8 /* ParseFacebookUtilsV4.framework */; };
 		B96AA8F41AEC7761001027F8 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8EE1AEC7761001027F8 /* ParseUI.framework */; };
+		B9814B061AECCA750070A321 /* LogoTextbook.png in Resources */ = {isa = PBXBuildFile; fileRef = B9814B051AECCA750070A321 /* LogoTextbook.png */; };
+		B9814B081AECCD190070A321 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9814B071AECCD190070A321 /* Launch Screen.xib */; };
+		B9814B0A1AECCD340070A321 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9814B091AECCD340070A321 /* Info.plist */; };
+		B9814B0B1AECD0C60070A321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B960984F1AEBC558007D6DC1 /* Main.storyboard */; };
+		B9814B0F1AECD1D00070A321 /* LOGOtextbookSCREEN.png in Resources */ = {isa = PBXBuildFile; fileRef = B9814B0E1AECD1D00070A321 /* LOGOtextbookSCREEN.png */; };
+		B9814B131AECD3970070A321 /* LOGO Icon small.png in Resources */ = {isa = PBXBuildFile; fileRef = B9814B121AECD3970070A321 /* LOGO Icon small.png */; };
 		B9D05B231AEC1A0500438889 /* StartTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D05B221AEC1A0500438889 /* StartTabBarController.swift */; };
 		B9D05B251AEC1A8900438889 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D05B241AEC1A8900438889 /* Social.framework */; };
 		B9D05B271AEC1A8E00438889 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D05B261AEC1A8E00438889 /* Accounts.framework */; };
@@ -126,7 +129,6 @@
 		2E7293001AEC542200546E21 /* TextbookApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TextbookApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7293061AEC542200546E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E7293081AEC542200546E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		2E72930A1AEC542200546E21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2EBCAA741AEC76CA006B39B8 /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		2EE86FC31AEBC8D3004CF838 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2EE86FC51AEBC8DA004CF838 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -144,7 +146,6 @@
 		B96098461AEBC558007D6DC1 /* TextbookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextbookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B960984B1AEBC558007D6DC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B96098501AEBC558007D6DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B96098521AEBC558007D6DC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B960985B1AEBC558007D6DC1 /* TextbookAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextbookAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96098601AEBC558007D6DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96098611AEBC558007D6DC1 /* TextbookAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextbookAppTests.swift; sourceTree = "<group>"; };
@@ -164,6 +165,11 @@
 		B96AA8EC1AEC7761001027F8 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../parse-library-1.7.1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		B96AA8ED1AEC7761001027F8 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../parse-library-1.7.1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		B96AA8EE1AEC7761001027F8 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../parse-library-1.7.1/ParseUI.framework"; sourceTree = "<group>"; };
+		B9814B051AECCA750070A321 /* LogoTextbook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LogoTextbook.png; path = ../../../LogoTextbook.png; sourceTree = "<group>"; };
+		B9814B071AECCD190070A321 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		B9814B091AECCD340070A321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TextbookApp/Info.plist; sourceTree = "<group>"; };
+		B9814B0E1AECD1D00070A321 /* LOGOtextbookSCREEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGOtextbookSCREEN.png; sourceTree = "<group>"; };
+		B9814B121AECD3970070A321 /* LOGO Icon small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOGO Icon small.png"; sourceTree = "<group>"; };
 		B9D05B221AEC1A0500438889 /* StartTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTabBarController.swift; sourceTree = "<group>"; };
 		B9D05B241AEC1A8900438889 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B9D05B261AEC1A8E00438889 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -264,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				2E7293071AEC542200546E21 /* Interface.storyboard */,
-				2E72930A1AEC542200546E21 /* Images.xcassets */,
 				2E7293051AEC542200546E21 /* Supporting Files */,
 			);
 			path = "TextbookApp WatchKit App";
@@ -314,6 +319,10 @@
 		B960983D1AEBC558007D6DC1 = {
 			isa = PBXGroup;
 			children = (
+				B9814B121AECD3970070A321 /* LOGO Icon small.png */,
+				B9814B0E1AECD1D00070A321 /* LOGOtextbookSCREEN.png */,
+				B9814B091AECCD340070A321 /* Info.plist */,
+				B9814B071AECCD190070A321 /* Launch Screen.xib */,
 				D18F909E1AECBBC1005F89DF /* LogoTextbook.png */,
 				D18F909F1AECBBC1005F89DF /* LOGOtextbook.svg */,
 				2E7292F71AEC542200546E21 /* TextbookApp WatchKit Extension */,
@@ -339,6 +348,7 @@
 		B96098481AEBC558007D6DC1 /* TextbookApp */ = {
 			isa = PBXGroup;
 			children = (
+				B9814B051AECCA750070A321 /* LogoTextbook.png */,
 				2EBCAA741AEC76CA006B39B8 /* DetailsTableViewController.swift */,
 				B960989D1AEBE38D007D6DC1 /* Chats */,
 				B960984B1AEBC558007D6DC1 /* AppDelegate.swift */,
@@ -348,7 +358,6 @@
 				D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */,
 				B960984F1AEBC558007D6DC1 /* Main.storyboard */,
 				2E063DAB1AEC97E500E624F9 /* SearchViewController.swift */,
-				B96098521AEBC558007D6DC1 /* Images.xcassets */,
 				2EE86FE91AEBD151004CF838 /* browseTableViewController.swift */,
 				2E2A030C1AEC0E2D00113A67 /* addBookCourseListTableViewController.swift */,
 				2E2A030A1AEC0A6900113A67 /* textbooksTableViewController.swift */,
@@ -548,7 +557,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E7293091AEC542200546E21 /* Interface.storyboard in Resources */,
-				2E72930B1AEC542200546E21 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,11 +564,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9814B0F1AECD1D00070A321 /* LOGOtextbookSCREEN.png in Resources */,
+				B9814B0B1AECD0C60070A321 /* Main.storyboard in Resources */,
+				B9814B061AECCA750070A321 /* LogoTextbook.png in Resources */,
+				B9814B081AECCD190070A321 /* Launch Screen.xib in Resources */,
+				B9814B131AECD3970070A321 /* LOGO Icon small.png in Resources */,
+				B9814B0A1AECCD340070A321 /* Info.plist in Resources */,
 				D18F90A11AECBBC1005F89DF /* LOGOtextbook.svg in Resources */,
 				D18F90A01AECBBC1005F89DF /* LogoTextbook.png in Resources */,
 				B96098511AEBC558007D6DC1 /* Main.storyboard in Resources */,
 				B96098B71AEBE38D007D6DC1 /* Images.xcassets in Resources */,
-				B96098531AEBC558007D6DC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +825,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kevingerami/Downloads/parse-library-1-5",
@@ -830,6 +844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kevingerami/Downloads/parse-library-1-5",
