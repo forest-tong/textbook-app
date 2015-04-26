@@ -45,7 +45,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6a-0l-Hlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="204"/>
+            <point key="canvasLocation" x="1875" y="381"/>
         </scene>
         <!--Textbooks Table View Controller-->
         <scene sceneID="2M2-VL-h2Q">
@@ -88,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6y-Yp-4fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="130"/>
+            <point key="canvasLocation" x="2557" y="110"/>
         </scene>
         <!--List of Courses-->
         <scene sceneID="kmm-jT-FVO">
@@ -131,7 +131,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1525" y="326"/>
+            <point key="canvasLocation" x="1437" y="-337"/>
         </scene>
         <!--Chats-->
         <scene sceneID="pja-tC-Irp">
