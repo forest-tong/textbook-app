@@ -73,10 +73,11 @@ class ChatCell: UITableViewCell {
         let user = chat.you
         userPictureImageView.image = UIImage(named: "User0")
         userNameLabel.text = user?.valueForKey("username") as? String
-        let messageList = chat.valueForKey("messages") as! [AnyObject]
+        let messageList = chat.valueForKey("messages") as! [[AnyObject]]
         if messageList.count > 0 {
-            var messageGroup = messageList[0] as! [Message]
-            println(messageGroup[0])
+            var messageGroup = messageList[0]
+            var message = messageGroup[0] as! PFObject
+            println(message)
 //            let lastMessageGroup: [Message] = messageList[messageList.count - 1]
 //            let lastMessage: Message = lastMessageGroup[lastMessageGroup.count - 1]
 //            lastMessageTextLabel.text = lastMessage.text
