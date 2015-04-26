@@ -21,11 +21,11 @@ class Chat: PFObject, PFSubclassing {
     
     override init() {
         super.init()
+//        self.messages = []
 //        self.me = nil
 //        self.you = nil
 //        self.lastMessageText = nil
 //        self.lastMessageSentDate = nil
-//        self.messages = []
     }
     
     var lastMessageSentDateString: String? {
