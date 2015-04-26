@@ -43,6 +43,7 @@ class TextbookCreatorViewController: UITableViewController {
         book.condition = conditionTextField.text
         book.notes = notesTextView.text
         book.course = course["name"] as! String
+        book.owner = PFUser.currentUser()!
         
         if (course["textbooks"] == nil) {
             course["textbooks"] = [book]
@@ -51,7 +52,7 @@ class TextbookCreatorViewController: UITableViewController {
             courseTextbooks.append(book)
             course["textbooks"] = courseTextbooks
         }
-        course.saveInBackgroundWithBlock(nil)
+        course.save()
             
         let user = PFUser.currentUser()!
         if (user["textbooks"] == nil) {
@@ -63,8 +64,7 @@ class TextbookCreatorViewController: UITableViewController {
         }
         PFUser.currentUser()!.save()
         
-        book.saveInBackgroundWithBlock(nil)
-        
+        book.save()
         performSegueWithIdentifier("unwindToMyBooks", sender: self)
     }
     /*
