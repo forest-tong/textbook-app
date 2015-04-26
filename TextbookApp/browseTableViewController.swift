@@ -16,6 +16,11 @@ class browseTableViewController: PFQueryTableViewController {
         super.init(style: style, className: className)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.parseClassName = "Course"

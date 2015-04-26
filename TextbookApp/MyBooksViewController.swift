@@ -89,6 +89,7 @@ class MyBooksViewController: UITableViewController {
             query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
                 if error == nil {
                    let obj = objects!.first as! PFObject
+                    /*
                     var badArray = obj.valueForKey("textbooks") as! [PFObject]!
                     var goodArray = [PFObject]()
                     for book in badArray {
@@ -96,28 +97,43 @@ class MyBooksViewController: UITableViewController {
                             goodArray.append(book)
                         }
                     }
-                    obj.setValue(goodArray, forKey: "textbooks")
-                    obj.saveInBackgroundWithBlock(nil)
+                    */
+                    
+                    /*
+                    if goodArray.count == 0 {
+                        obj.setValue(nil, forKey: "textbooks")
+                    } else {
+                        obj.setValue(goodArray, forKey: "textbooks")
+                    }
+                    */
+                    
+                    /*
+                    var badBooks = PFUser.currentUser()!.valueForKey("textbooks") as! [PFObject]
+                    var goodBooks = [PFObject]()
+                    for book in badBooks {
+                        if book != self.books[indexPath.row] {
+                            goodBooks.append(book)
+                        }
+                    }*/
+                    
+                    
+                    
+                    let deletedBook = self.books.removeAtIndex(indexPath.row)
+                    obj.removeObject(deletedBook, forKey: "textbooks")
+                    obj.save()
+                    
+                    PFUser.currentUser()!.removeObject(deletedBook, forKey: "textbooks")
+                    PFUser.currentUser()!.save()
+
+                    deletedBook.delete()
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    })
                 }
             }
             
-            var badBooks = PFUser.currentUser()!.valueForKey("textbooks") as! [PFObject]
-            var goodBooks = [PFObject]()
-            for book in badBooks {
-                if book != self.books[indexPath.row] {
-                    goodBooks.append(book)
-                }
-            }
-            PFUser.currentUser()!.setValue(goodBooks, forKey: "textbooks")
-            PFUser.currentUser()!.saveInBackgroundWithBlock(nil)
-
-
             
-            let deletedBook = books.removeAtIndex(indexPath.row)
-            
-            deletedBook.deleteInBackgroundWithBlock(nil)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -148,8 +164,8 @@ class MyBooksViewController: UITableViewController {
         let user = PFUser.currentUser()!
         user.fetchIfNeeded()
         if user["textbooks"] != nil {
-        self.books = user["textbooks"] as! [Textbook]
-        self.tableView.reloadData()
+            self.books = user["textbooks"] as! [Textbook]
+        	self.tableView.reloadData()
         }
         /*
         let booksForSaleRelation = user.relationForKey("textbooks")
