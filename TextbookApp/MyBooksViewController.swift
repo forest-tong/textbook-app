@@ -143,8 +143,8 @@ class MyBooksViewController: UITableViewController {
         let user = PFUser.currentUser()!
         user.fetchIfNeeded()
         if user["textbooks"] != nil {
-        self.books = user["textbooks"] as! [Textbook]
-        self.tableView.reloadData()
+            self.books = user["textbooks"] as! [Textbook]
+        	self.tableView.reloadData()
         }
         /*
         let booksForSaleRelation = user.relationForKey("textbooks")
