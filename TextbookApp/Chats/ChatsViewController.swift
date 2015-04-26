@@ -18,11 +18,11 @@ class ChatsViewController: UITableViewController {
         chat.save()
         let i = PFUser.currentUser()!
         chat.messages = [
-            Message(me: i, you: i, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
-            Message(me: i, you: i, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
-            Message(me: i, you: i, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
-            Message(me: i, you: i, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
-            Message(me: i, you: i, text: "6 sounds good :-)", sentDate: NSDate())
+//            Message(me: i, you: i, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
+//            Message(me: i, you: i, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
+//            Message(me: i, you: i, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
+//            Message(me: i, you: i, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
+//            Message(me: i, you: i, text: "6 sounds good :-)", sentDate: NSDate())
         ]
         let tempChats = [chat]
         let currentUser = PFUser.currentUser()!

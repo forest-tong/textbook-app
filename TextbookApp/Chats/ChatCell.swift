@@ -68,55 +68,10 @@ class ChatCell: UITableViewCell {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configureWithChat2(chat: Chat) {
-        
-        
-        
-        chat.fetch()
-        var user = chat.valueForKey("you") as! PFUser
-        user.fetch()
-        userPictureImageView.image = UIImage(named: "User0")
-        userNameLabel.text = user.valueForKey("username") as? String
-        
-        
-        
-        var query = PFQuery(className: "Chat")
-        query.whereKey("lastMessageSentDate", equalTo:chat.lastMessageSentDate!)
-        query.includeKey("messages")
-        var objectFirst = query.getFirstObject()!
-        objectFirst.fetch()
-        
-
-
-        
-        
-        
-        var messageList = objectFirst.objectForKey("messages") as! [Message]
-
-        
-        println(messageList is [Message])
-        if messageList.count > 0 {
-            var index = messageList.count - 1
-            //                    var lastMessage = messageList[index]
-            println(messageList)
-            //                    self.lastMessageTextLabel.text = lastMessage.text
-        }
-        self.lastMessageSentDateLabel.text = chat.lastMessageSentDateString
-    }
-
-
-
-
 
     func configureWithChat(chat: Chat) {
         chat.fetchInBackgroundWithBlock({finished, error in
             let user = chat.valueForKey("you") as! PFUser
-            
-            
-            
-            
-            
             user.fetchInBackgroundWithBlock({finished, error in
                 self.userPictureImageView.image = UIImage(named: "User0")
                 self.userNameLabel.text = user.valueForKey("username") as? String
