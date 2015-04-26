@@ -201,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="1840" y="1025"/>
         </scene>
-        <!--Root View Controller-->
+        <!--My Textbooks-->
         <scene sceneID="CQV-gf-yHi">
             <objects>
                 <tableViewController id="T7N-1G-dw6" customClass="MyBooksViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -236,7 +236,7 @@
                             <outlet property="delegate" destination="T7N-1G-dw6" id="1Dt-4B-ErA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="2y2-yD-bPq">
+                    <navigationItem key="navigationItem" title="My Textbooks" id="2y2-yD-bPq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qAL-cG-H2I">
                             <connections>
                                 <action selector="didPressAddButton:" destination="T7N-1G-dw6" id="w6F-Zg-NX6"/>
