@@ -21,6 +21,9 @@ class browseTableViewController: PFQueryTableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidAppear(animated: Bool) {
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.parseClassName = "Course"
@@ -55,7 +58,7 @@ class browseTableViewController: PFQueryTableViewController {
         if segue.identifier == "courseSegue" {
             let textbookVC = segue.destinationViewController as! textbooksTableViewController
             textbookVC.courseObject = objectAtIndexPath(tableView.indexPathForSelectedRow()!)
-        }
+        } 
     }
     
 
