@@ -10,14 +10,17 @@ import UIKit
 
 var filter = ""
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
+class SearchViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+    
+    var tableViewController : browseTableViewController!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
 
-      
+        //self.performSegueWithIdentifier("toSearchDelegate", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,5 +43,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UISearchDispl
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         filter = ""
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        filter = searchText
+        tableViewController.queryForTable()
+        tableViewController.tableView.reloadData()
+        tableViewController.loadObjects()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toSearchDelegate" {
+            let filterVC = segue.destinationViewController as! browseTableViewController
+            self.tableViewController = filterVC
+        }
     }
 }

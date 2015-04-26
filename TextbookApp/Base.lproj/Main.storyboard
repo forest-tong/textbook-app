@@ -105,7 +105,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79W-72-Wa5">
                                 <rect key="frame" x="-6" y="44" width="600" height="556"/>
                                 <connections>
-                                    <segue destination="Kbl-0N-BnZ" kind="embed" id="qXb-KX-RN7"/>
+                                    <segue destination="Kbl-0N-BnZ" kind="embed" identifier="toSearchDelegate" id="qXb-KX-RN7"/>
                                 </connections>
                             </containerView>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Courses" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTG-LT-CG3">
