@@ -16,9 +16,32 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UI
     @IBOutlet weak var conditionTF: UITextField!
     @IBOutlet weak var notesTV: UITextView!
     @IBAction func contactButtonTap(sender: AnyObject) {
+       // fetch textbook
+        //get owner
+        //make an empty chat to owner with current user
+        //make an empty chat to user from owner
+        //add to respective chats properties
+        //save
+        //segue to chatviewcontroller
         
-        // comment so Daniel can get this!!!
-        
+        //TODO: HANDLE CASE WHEN USER HAS UNDEFINED CHATS
+        textbook.fetch()
+        var owner: PFUser = textbook.objectForKey("owner") as! PFUser
+        owner.fetch()
+        var chat1 = Chat(me: PFUser.currentUser()!, you: owner, lastMessageSentDate: NSDate())
+        var chat2 = Chat(me: owner, you: PFUser.currentUser()!, lastMessageSentDate: NSDate())
+        chat1.save()
+        chat2.save()
+        var chats1 = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
+        var chats2 = owner.objectForKey("chats") as! [Chat]
+        chats1.append(chat1)
+        chats2.append(chat2)
+        println(chats1)
+        PFUser.currentUser()!.setValue(chats1, forKey: "chats")
+        owner.setObject(chats2, forKey: "chats")
+        PFUser.currentUser()!.saveInBackgroundWithBlock({ (bool, error) -> Void in
+//            owner.save()
+})
     }
     override func viewDidLoad() {
         super.viewDidLoad()

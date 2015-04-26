@@ -1,26 +1,27 @@
 import Foundation
+import Parse
 
 class Message: PFObject, PFSubclassing {
-    var incoming: Bool?
+    @NSManaged var me: PFUser?
+    @NSManaged var you: PFUser?
     @NSManaged var text: String?
-    var sentDate: NSDate?
+    @NSManaged var sentDate: NSDate?
     
     override class func initialize() {
-        var onceToken : dispatch_once_t = 0;
-        dispatch_once(&onceToken) {
+        var onceToken2 : dispatch_once_t = 0;
+        dispatch_once(&onceToken2) {
             self.registerSubclass()
         }
     }
     
     override init() {
         super.init()
-        self.incoming = nil
-        self.sentDate = nil
     }
 
-    init(incoming: Bool, text: String, sentDate: NSDate) {
+    init(me: PFUser, you: PFUser, text: String, sentDate: NSDate) {
         super.init()
-        self.incoming = incoming
+        self.me = me
+        self.you = you
         self.text = text
         self.sentDate = sentDate
     }

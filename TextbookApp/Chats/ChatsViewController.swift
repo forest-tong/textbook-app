@@ -6,6 +6,7 @@ class ChatsViewController: UITableViewController {
     var chats = [Chat]()
 
     convenience init() {
+        println("init")
         self.init(style: .Plain)
         title = "Chats"
     }
@@ -14,23 +15,24 @@ class ChatsViewController: UITableViewController {
         super.viewDidLoad()
         
 //        let chat = Chat(me: PFUser.currentUser()!, you: PFUser.currentUser()!, lastMessageSentDate: NSDate())
+//        chat.save()
+//        let i = PFUser.currentUser()!
 //        chat.messages = [
-//            [
-//                Message(incoming: true, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
-//                Message(incoming: false, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2))
-//            ],
-//            [
-//                Message(incoming: true, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
-//                Message(incoming: false, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
-//                Message(incoming: true, text: "6 sounds good :-)", sentDate: NSDate())
-//            ]
+////            Message(me: i, you: i, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
+////            Message(me: i, you: i, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
+////            Message(me: i, you: i, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
+////            Message(me: i, you: i, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
+////            Message(me: i, you: i, text: "6 sounds good :-)", sentDate: NSDate())
 //        ]
 //        let tempChats = [chat]
 //        let currentUser = PFUser.currentUser()!
-//        currentUser.setValue(tempChats, forKey: "chats")
-//        chat.saveInBackgroundWithBlock(nil)
+//        currentUser.setObject(tempChats, forKey: "chats")
 //        currentUser.saveInBackgroundWithBlock(nil)
-        self.chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
+//        chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
+//        println(chats[0])
+        chats = []
+        
+        
         
         tableView.backgroundColor = UIColor.whiteColor()
         tableView.rowHeight = chatCellHeight
@@ -39,23 +41,11 @@ class ChatsViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-//        fetchChats()
-//        tableView.reloadData()
+        fetchChats()
+        tableView.reloadData()
     }
     
     func fetchChats() {
-//        let buyerQuery = PFQuery(className: "Chat")
-//        buyerQuery.whereKey("buyer", equalTo: PFUser.currentUser()!)
-//        let sellerQuery = PFQuery(className: "Chat")
-//        sellerQuery.whereKey("seller", equalTo: PFUser.currentUser()!)
-//        let query = PFQuery.orQueryWithSubqueries([buyerQuery, sellerQuery])
-//        query.orderByDescending("updatedAt")
-//        buyerQuery.findObjectsInBackgroundWithBlock { objects, error -> Void in
-//            if let chats = objects as? [Chat] {
-//                account.chats = chats
-//                self.tableView.reloadData()
-//            }
-//        }
         let query = Chat.query()!
         query.includeKey("you")
         query.includeKey("me")
