@@ -70,6 +70,7 @@ class ChatCell: UITableViewCell {
     }
 
     func configureWithChat(chat: Chat) {
+        println(chat)
         chat.fetchInBackgroundWithBlock({finished, error in
             var user = chat.valueForKey("you") as! PFUser
             if user == PFUser.currentUser() {

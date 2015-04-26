@@ -14,46 +14,46 @@ class ChatsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let chat = Chat(me: PFUser.currentUser()!, you: PFUser.currentUser()!, lastMessageSentDate: NSDate())
-        chat.save()
-        let i = PFUser.currentUser()!
-        let user1 = PFQuery.getUserObjectWithId("hhO8cokpqK")!
-        let user2 = PFQuery.getUserObjectWithId("eNzwt2P8Ck")!
-        chat.messages = [
-            Message(me: i, you: i, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
-            Message(me: i, you: i, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
-            Message(me: i, you: i, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
-            Message(me: i, you: i, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
-            Message(me: i, you: i, text: "6 sounds good :-)", sentDate: NSDate())
-        ]
-        
-        let chat2 = Chat(me: PFUser.currentUser()!, you: user1, lastMessageSentDate: NSDate())
-        chat2.save()
-        chat2.messages = [
-            Message(me: i, you: user1, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
-            Message(me: i, you: user1, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
-            Message(me: i, you: user1, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
-            Message(me: i, you: user1, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
-            Message(me: i, you: user1, text: "6 sounds good :-)", sentDate: NSDate())
-        ]
-        
-        let chat3 = Chat(me: PFUser.currentUser()!, you: user2, lastMessageSentDate: NSDate())
-        chat3.save()
-        chat3.messages = [
-            Message(me: i, you: user2, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
-            Message(me: i, you: user2, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
-            Message(me: i, you: user2, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
-            Message(me: i, you: user2, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
-            Message(me: i, you: user2, text: "6 sounds good :-)", sentDate: NSDate())
-        ]
-        
-        
-        let tempChats = [chat, chat2, chat3]
-        let currentUser = PFUser.currentUser()!
-        currentUser.setObject(tempChats, forKey: "chats")
-        currentUser.saveInBackgroundWithBlock(nil)
-        chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
-        chats = []
+//        let chat = Chat(me: PFUser.currentUser()!, you: PFUser.currentUser()!, lastMessageSentDate: NSDate())
+//        chat.save()
+//        let i = PFUser.currentUser()!
+//        let user1 = PFQuery.getUserObjectWithId("hhO8cokpqK")!
+//        let user2 = PFQuery.getUserObjectWithId("eNzwt2P8Ck")!
+//        chat.messages = [
+//            Message(me: i, you: i, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
+//            Message(me: i, you: i, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
+//            Message(me: i, you: i, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
+//            Message(me: i, you: i, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
+//            Message(me: i, you: i, text: "6 sounds good :-)", sentDate: NSDate())
+//        ]
+//        
+//        let chat2 = Chat(me: PFUser.currentUser()!, you: user1, lastMessageSentDate: NSDate())
+//        chat2.save()
+//        chat2.messages = [
+//            Message(me: i, you: user1, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
+//            Message(me: i, you: user1, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
+//            Message(me: i, you: user1, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
+//            Message(me: i, you: user1, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
+//            Message(me: i, you: user1, text: "6 sounds good :-)", sentDate: NSDate())
+//        ]
+//        
+//        let chat3 = Chat(me: PFUser.currentUser()!, you: user2, lastMessageSentDate: NSDate())
+//        chat3.save()
+//        chat3.messages = [
+//            Message(me: i, you: user2, text: "I really enjoyed programming with you! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2-60*60)),
+//            Message(me: i, you: user2, text: "Thanks! Me too! :-)", sentDate: NSDate(timeIntervalSinceNow: -60*60*24*2)),
+//            Message(me: i, you: user2, text: "Hey, would you like to spend some time together tonight and work on Acani?", sentDate: NSDate(timeIntervalSinceNow: -33)),
+//            Message(me: i, you: user2, text: "Sure, I'd love to. How's 6 PM?", sentDate: NSDate(timeIntervalSinceNow: -19)),
+//            Message(me: i, you: user2, text: "6 sounds good :-)", sentDate: NSDate())
+//        ]
+//        
+//        
+//        let tempChats = [chat, chat2, chat3]
+//        let currentUser = PFUser.currentUser()!
+//        currentUser.setObject(tempChats, forKey: "chats")
+//        currentUser.saveInBackgroundWithBlock(nil)
+//        chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
+//        chats = [] as [Chat]
         
         
         
@@ -77,12 +77,13 @@ class ChatsViewController: UITableViewController {
         query3.includeKey("you")
         query3.includeKey("me")
         query3.includeKey("messages")
-        query3.findObjectsInBackgroundWithBlock { objects, error -> Void in
-            if let myChats = objects as? [Chat] {
-                self.chats = myChats
-                self.tableView.reloadData()
-            }
+        let objects = query3.findObjects()
+        let myChats = objects as! [Chat]
+        self.chats = myChats
+        for chat in chats {
+            chat.fetch()
         }
+        self.tableView.reloadData()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

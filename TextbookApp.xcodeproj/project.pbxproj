@@ -45,7 +45,6 @@
 		B96098B71AEBE38D007D6DC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96098A51AEBE38D007D6DC1 /* Images.xcassets */; };
 		B96098BA1AEBE38D007D6DC1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098A81AEBE38D007D6DC1 /* Message.swift */; };
 		B96098BB1AEBE38D007D6DC1 /* MessageBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098A91AEBE38D007D6DC1 /* MessageBubbleCell.swift */; };
-		B96098BE1AEBE38D007D6DC1 /* MessageSentDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AC1AEBE38D007D6DC1 /* MessageSentDateCell.swift */; };
 		B96098BF1AEBE38D007D6DC1 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */; };
 		B96098C11AEBE38D007D6DC1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AF1AEBE38D007D6DC1 /* UserCell.swift */; };
 		B96AA8EF1AEC7761001027F8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8E91AEC7761001027F8 /* Bolts.framework */; };
@@ -156,7 +155,6 @@
 		B96098A51AEBE38D007D6DC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B96098A81AEBE38D007D6DC1 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B96098A91AEBE38D007D6DC1 /* MessageBubbleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleCell.swift; sourceTree = "<group>"; };
-		B96098AC1AEBE38D007D6DC1 /* MessageSentDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSentDateCell.swift; sourceTree = "<group>"; };
 		B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		B96098AF1AEBE38D007D6DC1 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B96AA8E91AEC7761001027F8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../parse-library-1.7.1/Bolts.framework"; sourceTree = "<group>"; };
@@ -415,7 +413,6 @@
 		B96098C61AEBF9D7007D6DC1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B96098AC1AEBE38D007D6DC1 /* MessageSentDateCell.swift */,
 				B96098A91AEBE38D007D6DC1 /* MessageBubbleCell.swift */,
 				B96098A11AEBE38D007D6DC1 /* ChatCell.swift */,
 				B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */,
@@ -572,7 +569,6 @@
 				B9814B0A1AECCD340070A321 /* Info.plist in Resources */,
 				D18F90A11AECBBC1005F89DF /* LOGOtextbook.svg in Resources */,
 				D18F90A01AECBBC1005F89DF /* LogoTextbook.png in Resources */,
-				B96098511AEBC558007D6DC1 /* Main.storyboard in Resources */,
 				B96098B71AEBE38D007D6DC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,7 +601,6 @@
 				D1A8EB0F1AEC3A1200732D29 /* textbooksTableViewController.swift in Sources */,
 				B9D05B231AEC1A0500438889 /* StartTabBarController.swift in Sources */,
 				D1A8EB091AEC347900732D29 /* Textbook.swift in Sources */,
-				B96098BE1AEBE38D007D6DC1 /* MessageSentDateCell.swift in Sources */,
 				D1A8EB081AEC347900732D29 /* MyBooksViewController.swift in Sources */,
 				D1A8EB0A1AEC347900732D29 /* TextbookCreatorViewController.swift in Sources */,
 				B96098B21AEBE38D007D6DC1 /* Chat.swift in Sources */,

@@ -58,6 +58,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.chat = chat
 //        chat.fetch()
         self.messages = chat.valueForKey("messages") as! [Message]
+        println(messages.count)
         super.init(nibName: nil, bundle: nil)
         title = chat.you?.valueForKey("username") as? String
     }
@@ -86,7 +87,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.keyboardDismissMode = .Interactive
         tableView.estimatedRowHeight = 44
         tableView.separatorStyle = .None
-        tableView.registerClass(MessageSentDateCell.self, forCellReuseIdentifier: NSStringFromClass(MessageSentDateCell))
         view.addSubview(tableView)
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -153,30 +153,25 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(MessageSentDateCell), forIndexPath: indexPath) as! MessageSentDateCell
-            let message = messages[0]
-            dateFormatter.dateStyle = .ShortStyle
-            dateFormatter.timeStyle = .ShortStyle
-            cell.sentDateLabel.text = dateFormatter.stringFromDate(message.sentDate!)
-            return cell
-        } else {
-            let cellIdentifier = NSStringFromClass(MessageBubbleCell)
-            var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MessageBubbleCell!
-            if cell == nil {
-                cell = MessageBubbleCell(style: .Default, reuseIdentifier: cellIdentifier)
-                
-                // Add gesture recognizers #CopyMessage
-                let action: Selector = "messageShowMenuAction:"
-                let doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: action)
-                doubleTapGestureRecognizer.numberOfTapsRequired = 2
-                cell.bubbleImageView.addGestureRecognizer(doubleTapGestureRecognizer)
-                cell.bubbleImageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: action))
-            }
-            let message = messages[indexPath.row - 1]
-            cell.configureWithMessage(message)
-            return cell
+        println("index: \(indexPath.row), section: \(indexPath.section)")
+        let cellIdentifier = NSStringFromClass(MessageBubbleCell)
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MessageBubbleCell!
+        if cell == nil {
+            cell = MessageBubbleCell(style: .Default, reuseIdentifier: cellIdentifier)
+            cell.messageLabel.text = "vhjvvhjvvnbvvc"
+            // Add gesture recognizers #CopyMessage
+            let action: Selector = "messageShowMenuAction:"
+            let doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: action)
+            doubleTapGestureRecognizer.numberOfTapsRequired = 2
+            cell.bubbleImageView.addGestureRecognizer(doubleTapGestureRecognizer)
+            cell.bubbleImageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: action))
         }
+        if indexPath.row >= 0 {
+            let message = messages[indexPath.row]
+            println(message)
+            cell.configureWithMessage(message)
+        }
+        return cell
     }
     
     // Reserve row selection #CopyMessage
@@ -253,24 +248,15 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         textView.resignFirstResponder()
         textView.becomeFirstResponder()
         
+        chat.fetch()
         let message = Message(me: chat.me!, you: chat.you!, text: textView.text, sentDate: NSDate())
         message.save()
         chat.messages.append(message)
-        println(chat.messages)
+        println("chat increased by 1")
         chat.saveInBackgroundWithBlock(nil)
         textView.text = nil
         updateTextViewHeight()
         sendButton.enabled = false
-        
-        let lastSection = tableView.numberOfSections()
-        tableView.beginUpdates()
-        tableView.insertSections(NSIndexSet(index: lastSection), withRowAnimation: .Automatic)
-        tableView.insertRowsAtIndexPaths([
-            NSIndexPath(forRow: 0, inSection: lastSection)
-//            ,NSIndexPath(forRow: 1, inSection: lastSection)
-            ], withRowAnimation: .Automatic)
-        tableView.endUpdates()
-        tableViewScrollToBottomAnimated(true)
     }
     
     func tableViewScrollToBottomAnimated(animated: Bool) {
