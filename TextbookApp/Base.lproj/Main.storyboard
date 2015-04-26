@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController id="Kbl-0N-BnZ" customClass="browseTableViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VgB-eK-Saa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -18,13 +18,13 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9Q-db-tVt" id="ZDM-LZ-a4l">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eZn-jh-PKc">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eZn-jh-PKc">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OZw-CA-yfI">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OZw-CA-yfI">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,7 +52,7 @@
             <objects>
                 <tableViewController id="Wj8-zr-mry" customClass="textbooksTableViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bsh-O9-dfv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -93,7 +93,7 @@
         <!--List of Courses-->
         <scene sceneID="kmm-jT-FVO">
             <objects>
-                <viewController id="SKK-TN-6hp" sceneMemberID="viewController">
+                <viewController id="SKK-TN-6hp" customClass="SearchViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yUn-Rs-huQ"/>
                         <viewControllerLayoutGuide type="bottom" id="lb0-bN-Ked"/>
@@ -103,17 +103,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79W-72-Wa5">
-                                <rect key="frame" x="-6" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="-6" y="44" width="600" height="556"/>
                                 <connections>
                                     <segue destination="Kbl-0N-BnZ" kind="embed" id="qXb-KX-RN7"/>
                                 </connections>
                             </containerView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search Courses" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTG-LT-CG3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="List of Courses" id="5nA-f8-zzj"/>
+                    <connections>
+                        <outlet property="searchBar" destination="gTG-LT-CG3" id="I9n-lt-zsG"/>
+                        <outlet property="searchDisplayController" destination="qyD-8P-gys" id="NTL-D4-Cxq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="or9-9U-S5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="qyD-8P-gys">
+                    <connections>
+                        <outlet property="delegate" destination="SKK-TN-6hp" id="kjd-ZA-YUg"/>
+                        <outlet property="searchContentsController" destination="SKK-TN-6hp" id="TUG-d9-I4R"/>
+                        <outlet property="searchResultsDataSource" destination="SKK-TN-6hp" id="2za-1X-A7b"/>
+                        <outlet property="searchResultsDelegate" destination="SKK-TN-6hp" id="3T2-7r-aYS"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1525" y="326"/>
         </scene>
@@ -440,7 +456,7 @@
             <objects>
                 <tableViewController title="Textbook Detail" id="VKQ-Dm-mgB" customClass="DetailsTableViewController" customModule="TextbookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="568-A8-YMg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>

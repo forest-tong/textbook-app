@@ -28,6 +28,7 @@ class MyBooksViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         fetchBooks()
+        tableView.reloadData()
     }
     
     @IBAction func didPressAddButton(sender: AnyObject) {
@@ -58,9 +59,13 @@ class MyBooksViewController: UITableViewController {
         
         let book = books[indexPath.row]
         book.fetchIfNeededInBackgroundWithBlock { (object, error) -> Void in
-            let book = object as! Textbook
+            if let obj = object {
+            let book = obj as! Textbook
             cell.textLabel!.text = book.name
             cell.detailTextLabel!.text = NSString(format:"%.2f" ,book.price) as String
+            }
+
+            
         }
         // Configure the cell...
 

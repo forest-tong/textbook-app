@@ -28,6 +28,9 @@ class browseTableViewController: PFQueryTableViewController {
         var query = PFQuery(className: "Course")
         query.whereKey("school", equalTo: location)
         query.whereKeyExists("textbooks")
+        if filter != "" {
+            query.whereKey("name", containsString: filter)
+        }
         query.orderByAscending("courseID")
         return query
     }
