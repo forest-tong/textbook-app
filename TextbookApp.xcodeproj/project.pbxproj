@@ -50,6 +50,12 @@
 		B96098BE1AEBE38D007D6DC1 /* MessageSentDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AC1AEBE38D007D6DC1 /* MessageSentDateCell.swift */; };
 		B96098BF1AEBE38D007D6DC1 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */; };
 		B96098C11AEBE38D007D6DC1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96098AF1AEBE38D007D6DC1 /* UserCell.swift */; };
+		B96AA8EF1AEC7761001027F8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8E91AEC7761001027F8 /* Bolts.framework */; };
+		B96AA8F01AEC7761001027F8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8EA1AEC7761001027F8 /* Parse.framework */; };
+		B96AA8F11AEC7761001027F8 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8EB1AEC7761001027F8 /* ParseCrashReporting.framework */; };
+		B96AA8F21AEC7761001027F8 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8EC1AEC7761001027F8 /* ParseFacebookUtils.framework */; };
+		B96AA8F31AEC7761001027F8 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8ED1AEC7761001027F8 /* ParseFacebookUtilsV4.framework */; };
+		B96AA8F41AEC7761001027F8 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96AA8EE1AEC7761001027F8 /* ParseUI.framework */; };
 		B9D05B231AEC1A0500438889 /* StartTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D05B221AEC1A0500438889 /* StartTabBarController.swift */; };
 		B9D05B251AEC1A8900438889 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D05B241AEC1A8900438889 /* Social.framework */; };
 		B9D05B271AEC1A8E00438889 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D05B261AEC1A8E00438889 /* Accounts.framework */; };
@@ -59,12 +65,6 @@
 		D165EA631AEC5C1000C8E305 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5D1AEC5C1000C8E305 /* ParseFacebookUtils.framework */; };
 		D165EA641AEC5C1000C8E305 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5E1AEC5C1000C8E305 /* ParseFacebookUtilsV4.framework */; };
 		D165EA651AEC5C1000C8E305 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5F1AEC5C1000C8E305 /* ParseUI.framework */; };
-		D165EA661AEC5C5600C8E305 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5A1AEC5C1000C8E305 /* Bolts.framework */; };
-		D165EA671AEC5C5600C8E305 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5B1AEC5C1000C8E305 /* Parse.framework */; };
-		D165EA681AEC5C5600C8E305 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5C1AEC5C1000C8E305 /* ParseCrashReporting.framework */; };
-		D165EA691AEC5C5600C8E305 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5D1AEC5C1000C8E305 /* ParseFacebookUtils.framework */; };
-		D165EA6A1AEC5C5600C8E305 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5E1AEC5C1000C8E305 /* ParseFacebookUtilsV4.framework */; };
-		D165EA6B1AEC5C5600C8E305 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D165EA5F1AEC5C1000C8E305 /* ParseUI.framework */; };
 		D1A8EB081AEC347900732D29 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8EB051AEC347900732D29 /* MyBooksViewController.swift */; };
 		D1A8EB091AEC347900732D29 /* Textbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8EB061AEC347900732D29 /* Textbook.swift */; };
 		D1A8EB0A1AEC347900732D29 /* TextbookCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8EB071AEC347900732D29 /* TextbookCreatorViewController.swift */; };
@@ -154,6 +154,12 @@
 		B96098AC1AEBE38D007D6DC1 /* MessageSentDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSentDateCell.swift; sourceTree = "<group>"; };
 		B96098AD1AEBE38D007D6DC1 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		B96098AF1AEBE38D007D6DC1 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B96AA8E91AEC7761001027F8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../parse-library-1.7.1/Bolts.framework"; sourceTree = "<group>"; };
+		B96AA8EA1AEC7761001027F8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../parse-library-1.7.1/Parse.framework"; sourceTree = "<group>"; };
+		B96AA8EB1AEC7761001027F8 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../parse-library-1.7.1/ParseCrashReporting.framework"; sourceTree = "<group>"; };
+		B96AA8EC1AEC7761001027F8 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../parse-library-1.7.1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		B96AA8ED1AEC7761001027F8 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../parse-library-1.7.1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		B96AA8EE1AEC7761001027F8 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../parse-library-1.7.1/ParseUI.framework"; sourceTree = "<group>"; };
 		B9D05B221AEC1A0500438889 /* StartTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTabBarController.swift; sourceTree = "<group>"; };
 		B9D05B241AEC1A8900438889 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B9D05B261AEC1A8E00438889 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -175,12 +181,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E7293201AEC561300546E21 /* libsqlite3.dylib in Frameworks */,
-				D165EA661AEC5C5600C8E305 /* Bolts.framework in Frameworks */,
-				D165EA671AEC5C5600C8E305 /* Parse.framework in Frameworks */,
-				D165EA681AEC5C5600C8E305 /* ParseCrashReporting.framework in Frameworks */,
-				D165EA691AEC5C5600C8E305 /* ParseFacebookUtils.framework in Frameworks */,
-				D165EA6A1AEC5C5600C8E305 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				D165EA6B1AEC5C5600C8E305 /* ParseUI.framework in Frameworks */,
+				B96AA8EF1AEC7761001027F8 /* Bolts.framework in Frameworks */,
+				B96AA8F01AEC7761001027F8 /* Parse.framework in Frameworks */,
+				B96AA8F11AEC7761001027F8 /* ParseCrashReporting.framework in Frameworks */,
+				B96AA8F21AEC7761001027F8 /* ParseFacebookUtils.framework in Frameworks */,
+				B96AA8F31AEC7761001027F8 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				B96AA8F41AEC7761001027F8 /* ParseUI.framework in Frameworks */,
 				2E72931F1AEC560D00546E21 /* SystemConfiguration.framework in Frameworks */,
 				2E72931E1AEC560700546E21 /* StoreKit.framework in Frameworks */,
 				2E72931D1AEC560200546E21 /* Security.framework in Frameworks */,
@@ -269,6 +275,12 @@
 		2EE86FD91AEBC95A004CF838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B96AA8E91AEC7761001027F8 /* Bolts.framework */,
+				B96AA8EA1AEC7761001027F8 /* Parse.framework */,
+				B96AA8EB1AEC7761001027F8 /* ParseCrashReporting.framework */,
+				B96AA8EC1AEC7761001027F8 /* ParseFacebookUtils.framework */,
+				B96AA8ED1AEC7761001027F8 /* ParseFacebookUtilsV4.framework */,
+				B96AA8EE1AEC7761001027F8 /* ParseUI.framework */,
 				D165EA5A1AEC5C1000C8E305 /* Bolts.framework */,
 				D165EA5B1AEC5C1000C8E305 /* Parse.framework */,
 				D165EA5C1AEC5C1000C8E305 /* ParseCrashReporting.framework */,
@@ -640,6 +652,7 @@
 					"$(inherited)",
 					"/Users/kevingerami/Downloads/parse-library-1-6",
 					"/Users/danielgalvez/Downloads/parse-library-1.7.1",
+					"/Users/ftong/Documents/parse-library-1.7.1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -660,6 +673,7 @@
 					"$(inherited)",
 					"/Users/kevingerami/Downloads/parse-library-1-6",
 					"/Users/danielgalvez/Downloads/parse-library-1.7.1",
+					"/Users/ftong/Documents/parse-library-1.7.1",
 				);
 				INFOPLIST_FILE = "TextbookApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

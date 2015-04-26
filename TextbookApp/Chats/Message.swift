@@ -1,9 +1,9 @@
 import Foundation
 
 class Message: PFObject, PFSubclassing {
-    let incoming: Bool?
-    let text: String?
-    let sentDate: NSDate?
+    var incoming: Bool?
+    @NSManaged var text: String?
+    var sentDate: NSDate?
     
     override class func initialize() {
         var onceToken : dispatch_once_t = 0;
@@ -13,17 +13,16 @@ class Message: PFObject, PFSubclassing {
     }
     
     override init() {
-        self.incoming = nil
-        self.text = nil
-        self.sentDate = nil
         super.init()
+        self.incoming = nil
+        self.sentDate = nil
     }
 
     init(incoming: Bool, text: String, sentDate: NSDate) {
+        super.init()
         self.incoming = incoming
         self.text = text
         self.sentDate = sentDate
-        super.init()
     }
     
     static func parseClassName() -> String {
