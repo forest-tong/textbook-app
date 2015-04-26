@@ -68,20 +68,23 @@ class ChatCell: UITableViewCell {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func configureWithChat(chat: Chat) {
-        let user = chat.you
-        userPictureImageView.image = UIImage(named: "User0")
-        userNameLabel.text = user?.valueForKey("username") as? String
-        let messageList = chat.valueForKey("messages") as! [[AnyObject]]
-        if messageList.count > 0 {
-            var messageGroup = messageList[0]
-            var message = messageGroup[0] as! PFObject
-            println(message)
-//            let lastMessageGroup: [Message] = messageList[messageList.count - 1]
-//            let lastMessage: Message = lastMessageGroup[lastMessageGroup.count - 1]
-//            lastMessageTextLabel.text = lastMessage.text
-        }
-        lastMessageSentDateLabel.text = chat.lastMessageSentDateString
+        chat.fetchInBackgroundWithBlock({finished, error in
+            let user = chat.valueForKey("you") as! PFUser
+            user.fetchInBackgroundWithBlock({finished, error in
+                self.userPictureImageView.image = UIImage(named: "User0")
+                self.userNameLabel.text = user.valueForKey("username") as? String
+                let messageList = chat.valueForKey("messages") as! [[PFObject]]
+                if messageList.count > 0 {
+                    var messageGroup = messageList[messageList.count - 1]
+                    var message = messageGroup[messageGroup.count - 1]
+                    message.fetchInBackgroundWithBlock({finished, error in
+                        self.lastMessageTextLabel.text = message.valueForKey("text") as? String
+                    })
+                }
+                self.lastMessageSentDateLabel.text = chat.lastMessageSentDateString
+            })
+        })
     }
 }

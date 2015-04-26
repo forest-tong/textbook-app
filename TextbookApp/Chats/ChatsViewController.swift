@@ -28,8 +28,9 @@ class ChatsViewController: UITableViewController {
 //        let tempChats = [chat]
 //        let currentUser = PFUser.currentUser()!
 //        currentUser.setValue(tempChats, forKey: "chats")
+//        chat.saveInBackgroundWithBlock(nil)
 //        currentUser.saveInBackgroundWithBlock(nil)
-        fetchChats()
+        self.chats = PFUser.currentUser()!.objectForKey("chats") as! [Chat]
         
         tableView.backgroundColor = UIColor.whiteColor()
         tableView.rowHeight = chatCellHeight
@@ -38,8 +39,8 @@ class ChatsViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        fetchChats()
-        tableView.reloadData()
+//        fetchChats()
+//        tableView.reloadData()
     }
     
     func fetchChats() {
