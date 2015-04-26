@@ -26,7 +26,8 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UI
         
         //TODO: HANDLE CASE WHEN USER HAS UNDEFINED CHATS
         textbook.fetch()
-        let owner: PFUser = textbook.objectForKey("owner") as! PFUser
+        var owner: PFUser = textbook.objectForKey("owner") as! PFUser
+        owner.fetch()
         var chat1 = Chat(me: PFUser.currentUser()!, you: owner, lastMessageSentDate: NSDate())
         var chat2 = Chat(me: owner, you: PFUser.currentUser()!, lastMessageSentDate: NSDate())
         chat1.save()
@@ -35,8 +36,12 @@ class DetailsTableViewController: UITableViewController, UITextFieldDelegate, UI
         var chats2 = owner.objectForKey("chats") as! [Chat]
         chats1.append(chat1)
         chats2.append(chat2)
-        PFUser.currentUser()!.save()
-        owner.save()
+        println(chats1)
+        PFUser.currentUser()!.setValue(chats1, forKey: "chats")
+        owner.setObject(chats2, forKey: "chats")
+        PFUser.currentUser()!.saveInBackgroundWithBlock({ (bool, error) -> Void in
+//            owner.save()
+})
     }
     override func viewDidLoad() {
         super.viewDidLoad()
